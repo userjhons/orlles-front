@@ -45,7 +45,7 @@
     </div>
 
     <!-- Product Section -->
-    <div class="container mx-auto px-4 flex flex-nowrap">
+    <div class="container mx-auto px-4 flex flex-col md:flex-row">
       <!-- Filters Column -->
       <div class="w-64 pr-6 flex-shrink-0">
         <div class="bg-white rounded-lg shadow-sm p-4 mb-4">
@@ -143,7 +143,7 @@
       </div>
 
       <!-- Products Grid -->
-      <div class="flex-grow">
+      <div class="flex-grow mt-6 md:mt-0">
         <h2 class="text-2xl font-bold mb-6 text-gray-800">Laptops disponibles</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <!-- Product Card 1 -->
@@ -151,8 +151,8 @@
             <div class="relative">
               <img src="https://cdn.pixabay.com/photo/2016/03/27/07/12/apple-1282241_1280.jpg"
                    alt="MacBook Pro" class="w-full h-48 object-cover">
-              <div class="absolute top-0  space-x-2">
-                <button class="card-icon w-8 h-8 bg-white rounded-full border-0 flex items-center justify-center  text-gray-600 hover:text-blue-600" data-product="1" data-action="view">
+              <div class="absolute top-0 right-2 space-x-2">
+                <button class="card-icon top-0 w-8 h-8 bg-white rounded-full border-0 flex items-center justify-center  text-gray-600 hover:text-blue-600" data-product="1" data-action="view">
                   <img src="https://cdn.discordapp.com/attachments/1378177959403454484/1378252376632463441/view.png?ex=683bed0d&is=683a9b8d&hm=c163cf3cbf5d94489304d2e3761ec75eb47a011b09ab46a2ec3042a5c8c7e559&" alt="Ver" class="w-5 h-5" />
                 </button>
                 <button class="card-icon w-8 h-8 bg-white rounded-full border-0 flex items-center justify-center  text-gray-600 hover:text-red-500" data-product="1" data-action="favorite">
@@ -335,6 +335,7 @@
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </div>
