@@ -1,37 +1,41 @@
 <header class="header">
   <div class="top-bar">
-    <!-- LINK LOGO PORTLLES IMPORT VIA DISCORD -->
+    <!-- LOGO -->
     <div class="logo">
       <img src="https://cdn.discordapp.com/attachments/1111808588231479369/1378241557655847049/logo.png?ex=683be2f9&is=683a9179&hm=159ab81ad84552282114151f54fde14c2dcbda04cc5f4430fd891e1a1ac475a6&" alt="Logo" class="logo-img">
     </div>
 
-  <!-- BARRA DE BUSQUEDAQ -->
+    <!-- BARRA DE BUSQUEDA CENTRADA -->
     <div class="search-container">
       <input type="text" class="search-input" placeholder="Buscar Productos">
       <button class="search-button">
         <i class="fas fa-search"></i>
       </button>
     </div>
-    
-    <!-- ACCIONES DE USUARIO, LOGIN, REGISTRO Y CARRITO -->
+
+    <!-- ACCIONES DE USUARIO Y CARRITO -->
     <div class="user-actions">
-      <button class="action-btn">Login</button>
-      <button class="action-btn">Registrate</button>
-      <div class="cart-icon">
+      <div class="user-info">
+        <div class="welcome">¡Bienvenido!</div>
+        <button class="action-btn" (click)="onLoginClick()">Identificate</button>
+        <button class="action-btn" (click)="onLoginClick()">Registrate</button>
+      </div>
+      <button class="cart-icon" (click)="onCartClick()">
         <i class="fas fa-shopping-cart"></i>
         <span class="cart-count">0</span>
-      </div>
+        <div class="cart-label">Carrito</div>
+      </button>
     </div>
   </div>
 
   <!-- PESTAÑAS DE NAVEGACIÓN -->
   <div class="nav-section">
     <div class="nav-container">
-      <button class="nav-btn">Comprar por categoría</button>
-      <button class="nav-btn">Productos de Importación</button>
+      <button class="nav-btn">Compra por Categoría</button>
+      <button class="nav-btn">Productos de Importacion</button>
       <button class="nav-btn">Productos de Stock</button>
       <button class="nav-btn">Delivery</button>
-      <button class="nav-btn">Servicio de importación</button>
+      <button class="nav-btn">Servicio de Importacion</button>
     </div>
   </div>
 </header>
