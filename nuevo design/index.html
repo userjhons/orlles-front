@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Imporllesinc - Importaciones y Productos Tecnológicos</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
+  <style id="app-style">
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background-color: #f8f9fa;
+    }
+    
+    .header-shadow {
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .product-card {
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .card-icon {
+      transition: all 0.2s;
+    }
+    
+    .card-icon:hover {
+      transform: scale(1.2);
+    }
+    
+    .search-input:focus {
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+    }
+    
+    .price-slider {
+      height: 5px;
+      background: #e2e8f0;
+      border-radius: 5px;
+    }
+    
+    .price-slider .ui-slider-range {
+      background: #3b82f6;
+    }
+    
+    .price-slider .ui-slider-handle {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: #3b82f6;
+      border: none;
+      cursor: pointer;
+      top: -6px;
+    }
+    
+    .swiper-button-next, .swiper-button-prev {
+      color: #fff !important;
+      background: rgba(0, 0, 0, 0.3);
+      width: 40px !important;
+      height: 40px !important;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .swiper-button-next:after, .swiper-button-prev:after {
+      font-size: 18px !important;
+    }
+    
+    /* Custom checkbox styles */
+    .custom-checkbox {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.5rem;
+    }
+    
+    .custom-checkbox input[type="checkbox"] {
+      cursor: pointer;
+    }
+    
+    /* Star Rating */
+    .star-rating {
+      display: inline-block;
+      unicode-bidi: bidi-override;
+      direction: rtl;
+    }
+    
+    .star-rating input {
+      display: none;
+    }
+    
+    .star-rating label {
+      color: #ddd;
+      cursor: pointer;
+      display: inline-block;
+      padding: 0 0.1em;
+      font-size: 1.2rem;
+    }
+    
+    .star-rating label:hover,
+    .star-rating label:hover ~ label,
+    .star-rating input:checked ~ label {
+      color: #ffc107;
+    }
+    
+    .modal-backdrop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 40;
+      display: none;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .modal-content {
+      width: 100%;
+      max-width: 500px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      padding: 2rem;
+      transform: translateY(-20px);
+      opacity: 0;
+      transition: transform 0.3s, opacity 0.3s;
+    }
+    
+    .modal-backdrop.active {
+      display: flex;
+    }
+    
+    .modal-backdrop.active .modal-content {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    
+    .social-login-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.5rem;
+      margin: 0.5rem 0;
+      border-radius: 4px;
+      font-weight: 500;
+      transition: background-color 0.2s;
+    }
+    
+    .social-login-btn i {
+      margin-right: 0.5rem;
+    }
+    
+    .btn-facebook {
+      background-color: #3b5998;
+      color: white;
+    }
+    
+    .btn-google {
+      background-color: #db4437;
+      color: white;
+    }
+    
+    .btn-twitter {
+      background-color: #1da1f2;
+      color: white;
+    }
+    
+    .btn-apple {
+      background-color: #000;
+      color: white;
+    }
+    
+    .btn-facebook:hover { background-color: #344e86; }
+    .btn-google:hover { background-color: #c53929; }
+    .btn-twitter:hover { background-color: #1991da; }
+    .btn-apple:hover { background-color: #333; }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col">
+  <!-- Header -->
+  <header class="bg-white header-shadow fixed top-0 left-0 right-0 z-30">
+    <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+      <!-- Logo -->
+      <div class="flex-shrink-0">
+        <a href="javascript:void(0)" class="text-2xl font-bold text-blue-600">
+          <span class="text-orange-500">Imporl</span>lesinc
+        </a>
+      </div>
+      
+      <!-- Search Bar -->
+      <div class="flex-grow mx-10">
+        <div class="relative">
+          <input type="text" placeholder="Buscar Productos" 
+                 class="search-input w-full py-2 px-4 border border-gray-300 rounded-lg focus:outline-none">
+          <button class="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-blue-600">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+      </div>
+      
+      <!-- User Actions -->
+      <div class="flex items-center space-x-4">
+        <div class="text-sm text-gray-600">Bienvenido</div>
+        <button id="login-btn" class="px-4 py-2 text-sm font-medium text-blue-600 hover:text-blue-800">
+          Identifícate
+        </button>
+        <button class="px-4 py-2 text-sm font-medium text-blue-600 hover:text-blue-800">
+          Regístrate
+        </button>
+        <div class="relative" id="cart-icon">
+          <i class="fas fa-shopping-cart text-lg text-gray-700 cursor-pointer hover:text-blue-600"></i>
+          <span id="cart-count" class="absolute -top-2 -right-2 bg-orange-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">0</span>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Secondary Navigation -->
+    <div class="bg-gray-100 py-2">
+      <div class="container mx-auto px-4 flex justify-center space-x-6">
+        <button class="px-3 py-1 text-sm text-gray-700 hover:text-blue-600 hover:bg-gray-200 rounded">
+          Comprar por categoría
+        </button>
+        <button class="px-3 py-1 text-sm text-gray-700 hover:text-blue-600 hover:bg-gray-200 rounded">
+          Productos de Importación
+        </button>
+        <button class="px-3 py-1 text-sm text-gray-700 hover:text-blue-600 hover:bg-gray-200 rounded">
+          Productos de Stock
+        </button>
+        <button class="px-3 py-1 text-sm text-gray-700 hover:text-blue-600 hover:bg-gray-200 rounded">
+          Delivery
+        </button>
+        <button class="px-3 py-1 text-sm text-gray-700 hover:text-blue-600 hover:bg-gray-200 rounded">
+          Servicio de importación
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="flex-grow pt-[130px]">
+    <!-- Carousel -->
+    <div class="swiper mySwiper mb-8">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="https://cdn.pixabay.com/photo/2020/03/27/17/03/shopping-4974313_1280.jpg" 
+               alt="Ofertas especiales" class="w-full h-[400px] object-cover">
+          <div class="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent flex items-center">
+            <div class="text-white px-10">
+              <h2 class="text-4xl font-bold mb-2">Ofertas Especiales</h2>
+              <p class="text-xl mb-4">Descubre nuestras mejores laptops con descuentos increíbles</p>
+              <button class="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-lg">
+                Ver Ofertas
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <img src="https://cdn.pixabay.com/photo/2017/10/10/21/47/laptop-2838921_1280.jpg" 
+               alt="Nuevos modelos" class="w-full h-[400px] object-cover">
+          <div class="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent flex items-center">
+            <div class="text-white px-10">
+              <h2 class="text-4xl font-bold mb-2">Últimos Modelos</h2>
+              <p class="text-xl mb-4">La tecnología más reciente a tu alcance</p>
+              <button class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg">
+                Descubrir
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <img src="https://cdn.pixabay.com/photo/2017/05/11/11/15/workplace-2303851_1280.jpg" 
+               alt="Laptops profesionales" class="w-full h-[400px] object-cover">
+          <div class="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent flex items-center">
+            <div class="text-white px-10">
+              <h2 class="text-4xl font-bold mb-2">Para Profesionales</h2>
+              <p class="text-xl mb-4">El mejor rendimiento para tu trabajo</p>
+              <button class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg">
+                Explorar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+    
+    <!-- Product Section -->
+    <div class="container mx-auto px-4 flex flex-wrap">
+      <!-- Filters Column -->
+      <div class="w-64 pr-6 flex-shrink-0">
+        <div class="bg-white rounded-lg shadow-sm p-4 mb-4">
+          <h3 class="font-semibold text-lg mb-4 text-gray-800">Filtros</h3>
+          
+          <!-- Price Range -->
+          <div class="mb-6">
+            <h4 class="font-medium text-gray-700 mb-2">Rango de Precio</h4>
+            <div id="price-slider" class="price-slider mb-2"></div>
+            <div class="flex justify-between text-sm text-gray-600">
+              <span id="price-min">$500</span>
+              <span id="price-max">$3000</span>
+            </div>
+          </div>
+          
+          <!-- Categories -->
+          <div class="mb-6">
+            <h4 class="font-medium text-gray-700 mb-2">Categoría</h4>
+            <div class="space-y-1">
+              <div class="custom-checkbox">
+                <input type="checkbox" id="cat-gaming" class="mr-2">
+                <label for="cat-gaming" class="text-sm text-gray-600">Gaming</label>
+              </div>
+              <div class="custom-checkbox">
+                <input type="checkbox" id="cat-business" class="mr-2">
+                <label for="cat-business" class="text-sm text-gray-600">Negocios</label>
+              </div>
+              <div class="custom-checkbox">
+                <input type="checkbox" id="cat-ultrabook" class="mr-2">
+                <label for="cat-ultrabook" class="text-sm text-gray-600">Ultrabooks</label>
+              </div>
+              <div class="custom-checkbox">
+                <input type="checkbox" id="cat-2in1" class="mr-2">
+                <label for="cat-2in1" class="text-sm text-gray-600">2 en 1</label>
+              </div>
+              <div class="custom-checkbox">
+                <input type="checkbox" id="cat-budget" class="mr-2">
+                <label for="cat-budget" class="text-sm text-gray-600">Económicas</label>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Rating -->
+          <div class="mb-6">
+            <h4 class="font-medium text-gray-700 mb-2">Valoración</h4>
+            <div class="star-rating">
+              <input type="radio" id="star5" name="rating" value="5">
+              <label for="star5"><i class="fas fa-star"></i></label>
+              <input type="radio" id="star4" name="rating" value="4">
+              <label for="star4"><i class="fas fa-star"></i></label>
+              <input type="radio" id="star3" name="rating" value="3">
+              <label for="star3"><i class="fas fa-star"></i></label>
+              <input type="radio" id="star2" name="rating" value="2">
+              <label for="star2"><i class="fas fa-star"></i></label>
+              <input type="radio" id="star1" name="rating" value="1">
+              <label for="star1"><i class="fas fa-star"></i></label>
+            </div>
+          </div>
+          
+          <!-- Brands -->
+          <div>
+            <h4 class="font-medium text-gray-700 mb-2">Marca</h4>
+            <div class="space-y-1">
+              <div class="custom-checkbox">
+                <input type="checkbox" id="brand-asus" class="mr-2">
+                <label for="brand-asus" class="text-sm text-gray-600">Asus</label>
+              </div>
+              <div class="custom-checkbox">
+                <input type="checkbox" id="brand-lenovo" class="mr-2">
+                <label for="brand-lenovo" class="text-sm text-gray-600">Lenovo</label>
+              </div>
+              <div class="custom-checkbox">
+                <input type="checkbox" id="brand-hp" class="mr-2">
+                <label for="brand-hp" class="text-sm text-gray-600">HP</label>
+              </div>
+              <div class="custom-checkbox">
+                <input type="checkbox" id="brand-acer" class="mr-2">
+                <label for="brand-acer" class="text-sm text-gray-600">Acer</label>
+              </div>
+              <div class="custom-checkbox">
+                <input type="checkbox" id="brand-msi" class="mr-2">
+                <label for="brand-msi" class="text-sm text-gray-600">MSI</label>
+              </div>
+              <div class="custom-checkbox">
+                <input type="checkbox" id="brand-macbook" class="mr-2">
+                <label for="brand-macbook" class="text-sm text-gray-600">MacBook</label>
+              </div>
+              <div class="custom-checkbox">
+                <input type="checkbox" id="brand-dell" class="mr-2">
+                <label for="brand-dell" class="text-sm text-gray-600">Dell</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Products Grid -->
+      <div class="flex-grow">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">Laptops disponibles</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Product Card 1 -->
+          <div class="product-card bg-white rounded-lg shadow-sm overflow-hidden">
+            <div class="relative">
+              <img src="https://cdn.pixabay.com/photo/2016/03/27/07/12/apple-1282241_1280.jpg" 
+                   alt="MacBook Pro" class="w-full h-48 object-cover">
+              <div class="absolute top-2 right-2 flex space-x-2">
+                <button class="card-icon w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-sm text-gray-600 hover:text-blue-600" data-product="1" data-action="view">
+                  <i class="fas fa-eye"></i>
+                </button>
+                <button class="card-icon w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-sm text-gray-600 hover:text-red-500" data-product="1" data-action="favorite">
+                  <i class="far fa-heart"></i>
+                </button>
+                <button class="card-icon w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-sm text-gray-600 hover:text-green-500" data-product="1" data-action="cart">
+                  <i class="fas fa-cart-plus"></i>
+                </button>
+              </div>
+            </div>
+            <div class="p-4">
+              <h3 class="font-semibold text-gray-800 mb-1">MacBook Pro 2025</h3>
+              <p class="text-gray-600 text-sm mb-2">M3 Pro, 32GB RAM, 1TB SSD</p>
+              <div class="flex items-center justify-between">
+                <div>
+                  <span class="text-lg font-bold text-blue-600">$2,499</span>
+                  <span class="text-sm text-gray-500 line-through ml-2">$2,699</span>
+                </div>
+                <span class="bg-orange-100 text-orange-800 text-xs font-medium px-2 py-1 rounded">
+                  -7%
+                </span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Product Card 2 -->
+          <div class="product-card bg-white rounded-lg shadow-sm overflow-hidden">
+            <div class="relative">
+              <img src="https://cdn.pixabay.com/photo/2015/05/31/10/55/man-791049_1280.jpg" 
+                   alt="ASUS ROG" class="w-full h-48 object-cover">
+              <div class="absolute top-2 right-2 flex space-x-2">
+                <button class="card-icon w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-sm text-gray-600 hover:text-blue-600" data-product="2" data-action="view">
+                  <i class="fas fa-eye"></i>
+                </button>
+                <button class="card-icon w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-sm text-gray-600 hover:text-red-500" data-product="2" data-action="favorite">
+                  <i class="far fa-heart"></i>
+                </button>
+                <button class="card-icon w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-sm text-gray-600 hover:text-green-500" data-product="2" data-action="cart">
+                  <i class="fas fa-cart-plus"></i>
+                </button>
+              </div>
+            </div>
+            <div class="p-4">
+              <h3 class="font-semibold text-gray-800 mb-1">ASUS ROG Zephyrus</h3>
+              <p class="text-gray-600 text-sm mb-2">Intel i9, RTX 4080, 64GB RAM</p>
+              <div class="flex items-center justify-between">
+                <div>
+                  <span class="text-lg font-bold text-blue-600">$1,999</span>
+                  <span class="text-sm text-gray-500 line-through ml-2">$2,299</span>
+                </div>
+                <span class="bg-orange-100 text-orange-800 text-xs font-medium px-2 py-1 rounded">
+                  -13%
+                </span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Product Card 3 -->
+          <div class="product-card bg-white rounded-lg shadow-sm overflow-hidden">
+            <div class="relative">
+              <img src="https://cdn.pixabay.com/photo/2020/10/21/18/07/laptop-5673901_1280.jpg" 
+                   alt="Dell XPS" class="w-full h-48 object-cover">
+              <div class="absolute top-2 right-2 flex space-x-2">
+                <button class="card-icon w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-sm text-gray-600 hover:text-blue-600" data-product="3" data-action="view">
+                  <i class="fas fa-eye"></i>
+                </button>
+                <button class="card-icon w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-sm text-gray-600 hover:text-red-500" data-product="3" data-action="favorite">
+                  <i class="far fa-heart"></i>
+                </button>
+                <button class="card-icon w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-sm text-gray-600 hover:text-green-500" data-product="3" data-action="cart">
+                  <i class="fas fa-cart-plus"></i>
+                </button>
+              </div>
+            </div>
+            <div class="p-4">
+              <h3 class="font-semibold text-gray-800 mb-1">Dell XPS 15</h3>
+              <p class="text-gray-600 text-sm mb-2">Intel i7, 16GB RAM, 512GB SSD</p>
+              <div class="flex items-center justify-between">
+                <div>
+                  <span class="text-lg font-bold text-blue-600">$1,499</span>
+                </div>
+                <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2 py-1 rounded">
+                  Nuevo
+                </span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Product Card 4 -->
+          <div class="product-card bg-white rounded-lg shadow-sm overflow-hidden">
+            <div class="relative">
+              <img src="https://cdn.pixabay.com/photo/2017/08/10/07/32/dell-2619501_1280.jpg" 
+                   alt="Lenovo ThinkPad" class="w-full h-48 object-cover">
+              <div class="absolute top-2 right-2 flex space-x-2">
+                <button class="card-icon w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-sm text-gray-600 hover:text-blue-600" data-product="4" data-action="view">
+                  <i class="fas fa-eye"></i>
+                </button>
+                <button class="card-icon w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-sm text-gray-600 hover:text-red-500" data-product="4" data-action="favorite">
+                  <i class="far fa-heart"></i>
+                </button>
+                <button class="card-icon w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-sm text-gray-600 hover:text-green-500" data-product="4" data-action="cart">
+                  <i class="fas fa-cart-plus"></i>
+                </button>
+              </div>
+            </div>
+            <div class="p-4">
+              <h3 class="font-semibold text-gray-800 mb-1">Lenovo ThinkPad X1</h3>
+              <p class="text-gray-600 text-sm mb-2">Intel i5, 16GB RAM, 256GB SSD</p>
+              <div class="flex items-center justify-between">
+                <div>
+                  <span class="text-lg font-bold text-blue-600">$1,299</span>
+                  <span class="text-sm text-gray-500 line-through ml-2">$1,399</span>
+                </div>
+                <span class="bg-orange-100 text-orange-800 text-xs font-medium px-2 py-1 rounded">
+                  -7%
+                </span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Product Card 5 -->
+          <div class="product-card bg-white rounded-lg shadow-sm overflow-hidden">
+            <div class="relative">
+              <img src="https://cdn.pixabay.com/photo/2016/06/28/05/27/laptop-1484263_1280.jpg" 
+                   alt="HP Spectre" class="w-full h-48 object-cover">
+              <div class="absolute top-2 right-2 flex space-x-2">
+                <button class="card-icon w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-sm text-gray-600 hover:text-blue-600" data-product="5" data-action="view">
+                  <i class="fas fa-eye"></i>
+                </button>
+                <button class="card-icon w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-sm text-gray-600 hover:text-red-500" data-product="5" data-action="favorite">
+                  <i class="far fa-heart"></i>
+                </button>
+                <button class="card-icon w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-sm text-gray-600 hover:text-green-500" data-product="5" data-action="cart">
+                  <i class="fas fa-cart-plus"></i>
+                </button>
+              </div>
+            </div>
+            <div class="p-4">
+              <h3 class="font-semibold text-gray-800 mb-1">HP Spectre x360</h3>
+              <p class="text-gray-600 text-sm mb-2">Intel i7, 16GB RAM, 1TB SSD</p>
+              <div class="flex items-center justify-between">
+                <div>
+                  <span class="text-lg font-bold text-blue-600">$1,399</span>
+                  <span class="text-sm text-gray-500 line-through ml-2">$1,599</span>
+                </div>
+                <span class="bg-orange-100 text-orange-800 text-xs font-medium px-2 py-1 rounded">
+                  -12%
+                </span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Product Card 6 -->
+          <div class="product-card bg-white rounded-lg shadow-sm overflow-hidden">
+            <div class="relative">
+              <img src="https://cdn.pixabay.com/photo/2015/07/17/22/43/student-849825_1280.jpg" 
+                   alt="Acer Predator" class="w-full h-48 object-cover">
+              <div class="absolute top-2 right-2 flex space-x-2">
+                <button class="card-icon w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-sm text-gray-600 hover:text-blue-600" data-product="6" data-action="view">
+                  <i class="fas fa-eye"></i>
+                </button>
+                <button class="card-icon w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-sm text-gray-600 hover:text-red-500" data-product="6" data-action="favorite">
+                  <i class="far fa-heart"></i>
+                </button>
+                <button class="card-icon w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-sm text-gray-600 hover:text-green-500" data-product="6" data-action="cart">
+                  <i class="fas fa-cart-plus"></i>
+                </button>
+              </div>
+            </div>
+            <div class="p-4">
+              <h3 class="font-semibold text-gray-800 mb-1">Acer Predator Helios</h3>
+              <p class="text-gray-600 text-sm mb-2">AMD Ryzen 9, RTX 4070, 32GB RAM</p>
+              <div class="flex items-center justify-between">
+                <div>
+                  <span class="text-lg font-bold text-blue-600">$1,799</span>
+                </div>
+                <span class="bg-green-100 text-green-800 text-xs font-medium px-2 py-1 rounded">
+                  En Stock
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Login Modal -->
+  <div class="modal-backdrop" id="login-modal">
+    <div class="modal-content">
+      <div class="text-center mb-6">
+        <a href="javascript:void(0)" class="text-2xl font-bold text-blue-600 inline-block">
+          <span class="text-orange-500">Imporl</span>lesinc
+        </a>
+        <h2 class="text-xl font-semibold mt-4 text-gray-800">Iniciar sesión en Imporllesinc para continuar</h2>
+      </div>
+      
+      <form id="login-form" class="space-y-4">
+        <div>
+          <label for="email" class="block text-gray-700 text-sm font-medium mb-1">Correo electrónico</label>
+          <input type="email" id="email" name="email" required 
+                 class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+        </div>
+        <div>
+          <label for="password" class="block text-gray-700 text-sm font-medium mb-1">Contraseña</label>
+          <input type="password" id="password" name="password" required 
+                 class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+        </div>
+        <div class="text-right">
+          <a href="javascript:void(0)" class="text-sm text-blue-600 hover:underline">¿Olvidó su contraseña?</a>
+        </div>
+        <button type="submit" class="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+          Iniciar sesión
+        </button>
+      </form>
+      
+      <div class="my-6 relative">
+        <div class="absolute inset-0 flex items-center">
+          <div class="w-full border-t border-gray-300"></div>
+        </div>
+        <div class="relative flex justify-center">
+          <span class="bg-white px-4 text-sm text-gray-500">O continuar con</span>
+        </div>
+      </div>
+      
+      <div class="space-y-2">
+        <button class="w-full social-login-btn btn-facebook">
+          <i class="fab fa-facebook-f"></i> Facebook
+        </button>
+        <button class="w-full social-login-btn btn-google">
+          <i class="fab fa-google"></i> Google
+        </button>
+        <button class="w-full social-login-btn btn-twitter">
+          <i class="fab fa-twitter"></i> Twitter
+        </button>
+        <button class="w-full social-login-btn btn-apple">
+          <i class="fab fa-apple"></i> Apple
+        </button>
+      </div>
+      
+      <div class="text-center mt-6">
+        <button id="close-modal" class="text-gray-500 hover:text-gray-700">
+          <i class="fas fa-times"></i> Cerrar
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Product Detail Modal -->
+  <div class="modal-backdrop" id="product-modal">
+    <div class="modal-content max-w-3xl">
+      <div class="flex justify-between items-start mb-4">
+        <h2 class="text-xl font-bold text-gray-800" id="product-modal-title">Detalles del Producto</h2>
+        <button id="close-product-modal" class="text-gray-500 hover:text-gray-700">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      
+      <div class="flex flex-col md:flex-row">
+        <div class="md:w-1/2 pr-0 md:pr-4 mb-4 md:mb-0">
+          <img id="product-modal-image" src="" alt="Product Image" class="w-full rounded-lg">
+        </div>
+        <div class="md:w-1/2">
+          <h3 id="product-modal-name" class="text-lg font-semibold mb-2"></h3>
+          <div class="flex items-center mb-2">
+            <div class="flex text-yellow-400">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+            <span class="text-gray-600 text-sm ml-2">4.5 (125 reseñas)</span>
+          </div>
+          <div class="mb-4">
+            <span id="product-modal-price" class="text-xl font-bold text-blue-600 mr-2"></span>
+            <span id="product-modal-old-price" class="text-gray-500 line-through"></span>
+          </div>
+          
+          <div class="mb-4">
+            <h4 class="font-medium text-gray-700 mb-2">Especificaciones</h4>
+            <ul class="space-y-1 text-sm text-gray-600" id="product-modal-specs">
+              <!-- Specs will be inserted here -->
+            </ul>
+          </div>
+          
+          <div class="flex space-x-2">
+            <button class="flex-1 bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700">
+              <i class="fas fa-cart-plus mr-2"></i> Añadir al carrito
+            </button>
+            <button class="w-12 h-10 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300 flex items-center justify-center">
+              <i class="far fa-heart"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-8 mt-12">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-wrap justify-between">
+        <div class="w-full md:w-1/4 mb-6 md:mb-0">
+          <a href="javascript:void(0)" class="text-2xl font-bold inline-block mb-4">
+            <span class="text-orange-500">Imporl</span><span class="text-white">lesinc</span>
+          </a>
+          <p class="text-gray-400 text-sm">
+            Importadores de tecnología de última generación. Ofrecemos los mejores productos con garantía y servicio técnico.
+          </p>
+        </div>
+        
+        <div class="w-full md:w-1/4 mb-6 md:mb-0">
+          <h3 class="text-lg font-semibold mb-3">Enlaces rápidos</h3>
+          <ul class="space-y-2">
+            <li><a href="javascript:void(0)" class="text-gray-400 hover:text-white">Inicio</a></li>
+            <li><a href="javascript:void(0)" class="text-gray-400 hover:text-white">Productos</a></li>
+            <li><a href="javascript:void(0)" class="text-gray-400 hover:text-white">Sobre nosotros</a></li>
+            <li><a href="javascript:void(0)" class="text-gray-400 hover:text-white">Contacto</a></li>
+          </ul>
+        </div>
+        
+        <div class="w-full md:w-1/4 mb-6 md:mb-0">
+          <h3 class="text-lg font-semibold mb-3">Contacto</h3>
+          <ul class="space-y-2 text-gray-400">
+            <li class="flex items-start">
+              <i class="fas fa-map-marker-alt mt-1 mr-2"></i>
+              <span>Av. Principal 123, Ciudad</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-phone mt-1 mr-2"></i>
+              <span>+123 456 7890</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-envelope mt-1 mr-2"></i>
+              <span>info@imporllesinc.com</span>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="w-full md:w-1/4">
+          <h3 class="text-lg font-semibold mb-3">Suscríbete</h3>
+          <p class="text-gray-400 text-sm mb-3">
+            Recibe nuestras ofertas y novedades
+          </p>
+          <form class="flex">
+            <input type="email" placeholder="Tu email" class="flex-grow px-3 py-2 rounded-l-md focus:outline-none text-gray-800">
+            <button type="submit" class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-r-md">
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </form>
+          <div class="flex space-x-4 mt-4">
+            <a href="javascript:void(0)" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+            <a href="javascript:void(0)" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+            <a href="javascript:void(0)" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+            <a href="javascript:void(0)" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="border-t border-gray-700 mt-8 pt-6 text-sm text-gray-400 text-center">
+        <p>&copy; 2025 Imporllesinc. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Dependencies -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+  
+  <script id="app-script">
+    // Initialize Swiper
+    const swiper = new Swiper(".mySwiper", {
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      loop: true,
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+      },
+    });
+    
+    // Initialize UI elements
+    $(document).ready(function() {
+      // Price Range Slider
+      $("#price-slider").slider({
+        range: true,
+        min: 500,
+        max: 3000,
+        values: [500, 3000],
+        slide: function(event, ui) {
+          $("#price-min").text("$" + ui.values[0]);
+          $("#price-max").text("$" + ui.values[1]);
+        }
+      });
+      
+      // Login Modal
+      $("#login-btn").click(function() {
+        $("#login-modal").addClass("active");
+      });
+      
+      $("#close-modal").click(function() {
+        $("#login-modal").removeClass("active");
+      });
+      
+      // Product Detail Modal
+      $("[data-action='view']").click(function() {
+        const productId = $(this).data("product");
+        openProductModal(productId);
+      });
+      
+      $("#close-product-modal").click(function() {
+        $("#product-modal").removeClass("active");
+      });
+      
+      // Cart Actions
+      $("[data-action='cart']").click(function() {
+        const productId = $(this).data("product");
+        addToCart(productId);
+      });
+      
+      // Favorite Actions
+      $("[data-action='favorite']").click(function() {
+        const productId = $(this).data("product");
+        addToFavorites(productId);
+      });
+      
+      // Login form submission
+      $("#login-form").submit(function(e) {
+        e.preventDefault();
+        const email = $("#email").val();
+        const password = $("#password").val();
+        
+        // Simulate login success
+        if (email && password) {
+          // This would be replaced with an actual API call
+          simulateLogin(email);
+        }
+      });
+    });
+    
+    // Initialize notifications
+    const notyf = new Notyf({
+      duration: 3000,
+      position: {
+        x: 'right',
+        y: 'top',
+      },
+      types: [
+        {
+          type: 'success',
+          background: '#10B981',
+          icon: {
+            className: 'fas fa-check',
+            tagName: 'i',
+            color: 'white'
+          }
+        },
+        {
+          type: 'error',
+          background: '#EF4444',
+          icon: {
+            className: 'fas fa-times',
+            tagName: 'i',
+            color: 'white'
+          }
+        }
+      ]
+    });
+    
+    // Simulate Login
+    function simulateLogin(email) {
+      // This would be an API call in a real application
+      setTimeout(() => {
+        const userData = {
+          name: email.split('@')[0],
+          email: email,
+          isLoggedIn: true
+        };
+        
+        // Store user data in local storage
+        localStorage.setItem('user', JSON.stringify(userData));
+        
+        // Update UI
+        $("#login-modal").removeClass("active");
+        updateLoginStatus(userData);
+        
+        notyf.success(`Bienvenido, ${userData.name}!`);
+      }, 500);
+    }
+    
+    // Update login status in UI
+    function updateLoginStatus(user) {
+      if (user && user.isLoggedIn) {
+        // Replace login/register buttons with user info
+        const headerActions = $("#login-btn").parent();
+        headerActions.html(`
+          <div class="text-sm text-gray-600">Bienvenido, ${user.name}</div>
+          <button id="logout-btn" class="px-4 py-2 text-sm font-medium text-blue-600 hover:text-blue-800">
+            Cerrar sesión
+          </button>
+          <div class="relative" id="cart-icon">
+            <i class="fas fa-shopping-cart text-lg text-gray-700 cursor-pointer hover:text-blue-600"></i>
+            <span id="cart-count" class="absolute -top-2 -right-2 bg-orange-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">0</span>
+          </div>
+        `);
+        
+        // Add logout functionality
+        $("#logout-btn").click(function() {
+          localStorage.removeItem('user');
+          window.location.reload();
+        });
+      }
+    }
+    
+    // Check login status on page load
+    function checkLoginStatus() {
+      const userData = localStorage.getItem('user');
+      if (userData) {
+        updateLoginStatus(JSON.parse(userData));
+      }
+    }
+    
+    // Add to cart functionality
+    function addToCart(productId) {
+      // Get current cart from localStorage
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      
+      // Check if product is already in cart
+      const productIndex = cart.findIndex(item => item.id === productId);
+      
+      if (productIndex !== -1) {
+        // Product exists, increase quantity
+        cart[productIndex].quantity += 1;
+        notyf.success('Cantidad actualizada en el carrito');
+      } else {
+        // Add new product
+        cart.push({
+          id: productId,
+          quantity: 1
+        });
+        notyf.success('Producto añadido al carrito');
+      }
+      
+      // Save updated cart
+      localStorage.setItem('cart', JSON.stringify(cart));
+      
+      // Update cart count
+      updateCartCount();
+    }
+    
+    // Update cart count in UI
+    function updateCartCount() {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+      $("#cart-count").text(totalItems);
+    }
+    
+    // Add to favorites functionality
+    function addToFavorites(productId) {
+      // Check if user is logged in
+      const userData = localStorage.getItem('user');
+      
+      if (!userData) {
+        // User not logged in, show notification
+        notyf.error('Inicia sesión para añadir a favoritos');
+        $("#login-modal").addClass("active");
+        return;
+      }
+      
+      // Get current favorites from localStorage
+      let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+      
+      // Check if product is already in favorites
+      const productExists = favorites.includes(productId);
+      
+      if (productExists) {
+        // Product exists, remove it
+        favorites = favorites.filter(id => id !== productId);
+        notyf.success('Producto eliminado de favoritos');
+      } else {
+        // Add new product
+        favorites.push(productId);
+        notyf.success('Producto añadido a favoritos');
+      }
+      
+      // Save updated favorites
+      localStorage.setItem('favorites', JSON.stringify(favorites));
+    }
+    
+    // Open product modal
+    function openProductModal(productId) {
+      // This would be an API call in a real application
+      const productData = getProductDetails(productId);
+      
+      $("#product-modal-title").text("Detalles del Producto");
+      $("#product-modal-name").text(productData.name);
+      $("#product-modal-image").attr("src", productData.image);
+      $("#product-modal-price").text("$" + productData.price);
+      
+      if (productData.oldPrice) {
+        $("#product-modal-old-price").text("$" + productData.oldPrice).show();
+      } else {
+        $("#product-modal-old-price").hide();
+      }
+      
+      // Generate specs list
+      const specsList = $("#product-modal-specs");
+      specsList.empty();
+      
+      productData.specs.forEach(spec => {
+        specsList.append(`<li><span class="font-medium">${spec.name}:</span> ${spec.value}</li>`);
+      });
+      
+      // Show modal
+      $("#product-modal").addClass("active");
+    }
+    
+    // Mock data for product details
+    function getProductDetails(productId) {
+      const products = {
+        1: {
+          name: "MacBook Pro 2025",
+          image: "https://cdn.pixabay.com/photo/2016/03/27/07/12/apple-1282241_1280.jpg",
+          price: "2,499",
+          oldPrice: "2,699",
+          specs: [
+            { name: "Procesador", value: "Apple M3 Pro" },
+            { name: "RAM", value: "32GB" },
+            { name: "Almacenamiento", value: "1TB SSD" },
+            { name: "Pantalla", value: "16 pulgadas Liquid Retina XDR" },
+            { name: "GPU", value: "GPU integrada de 19 núcleos" },
+            { name: "Sistema operativo", value: "macOS Sequoia" },
+            { name: "Batería", value: "Hasta 22 horas" },
+            { name: "Puertos", value: "3x Thunderbolt 4, HDMI, SDXC, MagSafe 3" }
+          ]
+        },
+        2: {
+          name: "ASUS ROG Zephyrus",
+          image: "https://cdn.pixabay.com/photo/2015/05/31/10/55/man-791049_1280.jpg",
+          price: "1,999",
+          oldPrice: "2,299",
+          specs: [
+            { name: "Procesador", value: "Intel Core i9 14900H" },
+            { name: "RAM", value: "64GB DDR5" },
+            { name: "Almacenamiento", value: "2TB NVMe SSD" },
+            { name: "Pantalla", value: "15.6 pulgadas 4K 240Hz" },
+            { name: "GPU", value: "NVIDIA GeForce RTX 4080" },
+            { name: "Sistema operativo", value: "Windows 12" },
+            { name: "Batería", value: "Hasta 8 horas" },
+            { name: "Refrigeración", value: "ROG Intelligent Cooling" }
+          ]
+        },
+        3: {
+          name: "Dell XPS 15",
+          image: "https://cdn.pixabay.com/photo/2020/10/21/18/07/laptop-5673901_1280.jpg",
+          price: "1,499",
+          oldPrice: "",
+          specs: [
+            { name: "Procesador", value: "Intel Core i7 14700H" },
+            { name: "RAM", value: "16GB DDR5" },
+            { name: "Almacenamiento", value: "512GB SSD" },
+            { name: "Pantalla", value: "15.6 pulgadas OLED 4K" },
+            { name: "GPU", value: "NVIDIA GeForce RTX 4050" },
+            { name: "Sistema operativo", value: "Windows 12" },
+            { name: "Batería", value: "Hasta 12 horas" },
+            { name: "Material", value: "Aluminio premium" }
+          ]
+        },
+        4: {
+          name: "Lenovo ThinkPad X1",
+          image: "https://cdn.pixabay.com/photo/2017/08/10/07/32/dell-2619501_1280.jpg",
+          price: "1,299",
+          oldPrice: "1,399",
+          specs: [
+            { name: "Procesador", value: "Intel Core i5 14500U" },
+            { name: "RAM", value: "16GB DDR5" },
+            { name: "Almacenamiento", value: "256GB SSD" },
+            { name: "Pantalla", value: "14 pulgadas FHD+" },
+            { name: "GPU", value: "Intel Iris Xe" },
+            { name: "Sistema operativo", value: "Windows 12 Pro" },
+            { name: "Batería", value: "Hasta 18 horas" },
+            { name: "Seguridad", value: "Lector de huellas, ThinkShutter" }
+          ]
+        },
+        5: {
+          name: "HP Spectre x360",
+          image: "https://cdn.pixabay.com/photo/2016/06/28/05/27/laptop-1484263_1280.jpg",
+          price: "1,399",
+          oldPrice: "1,599",
+          specs: [
+            { name: "Procesador", value: "Intel Core i7 14700U" },
+            { name: "RAM", value: "16GB DDR5" },
+            { name: "Almacenamiento", value: "1TB SSD" },
+            { name: "Pantalla", value: "13.5 pulgadas OLED táctil" },
+            { name: "GPU", value: "Intel Iris Xe" },
+            { name: "Sistema operativo", value: "Windows 12" },
+            { name: "Batería", value: "Hasta 15 horas" },
+            { name: "Características", value: "Convertible 2-en-1, Lápiz incluido" }
+          ]
+        },
+        6: {
+          name: "Acer Predator Helios",
+          image: "https://cdn.pixabay.com/photo/2015/07/17/22/43/student-849825_1280.jpg",
+          price: "1,799",
+          oldPrice: "",
+          specs: [
+            { name: "Procesador", value: "AMD Ryzen 9 9900HX" },
+            { name: "RAM", value: "32GB DDR5" },
+            { name: "Almacenamiento", value: "1TB NVMe SSD" },
+            { name: "Pantalla", value: "17.3 pulgadas QHD 165Hz" },
+            { name: "GPU", value: "NVIDIA GeForce RTX 4070" },
+            { name: "Sistema operativo", value: "Windows 12" },
+            { name: "Refrigeración", value: "5ª Gen AeroBlade 3D" },
+            { name: "Teclado", value: "RGB por zona, tecnología anti-ghosting" }
+          ]
+        }
+      };
+      
+      return products[productId];
+    }
+    
+    // Initialize on page load
+    $(document).ready(function() {
+      checkLoginStatus();
+      updateCartCount();
+    });
+  </script>
+</body>
+</html>
