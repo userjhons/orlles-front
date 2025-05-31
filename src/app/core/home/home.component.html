@@ -1,0 +1,419 @@
+<header>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</header>
+<body>
+  <div id="app">
+    <div class="tab-content" id="pagesTabContent">
+      <!-- Home Page -->
+      <div class="tab-pane fade show active" id="home" role="tabpanel">
+        <!-- Hero Banner -->
+        <div class="hero-banner" style="background-image: url('https://cdn.pixabay.com/photo/2017/12/26/09/15/woman-3040029_1280.jpg');">
+          <div class="container">
+            <div class="hero-content text-white col-md-6">
+              <h1 class="display-4 fw-bold">Summer Collection 2025</h1>
+              <p class="lead">Discover the latest trends and styles with our exclusive collection.</p>
+              <a href="javascript:void(0)" class="btn btn-primary btn-lg mt-3">Shop Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recommended Products -->
+        <div class="container mt-5">
+          <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2 class="section-title">Recommended For You</h2>
+            <div class="dropdown">
+              <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="sortDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                Sort By
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="sortDropdown">
+                <li><a class="dropdown-item" href="javascript:void(0)">Recommendation</a></li>
+                <li><a class="dropdown-item" href="javascript:void(0)">Price: Low to High</a></li>
+                <li><a class="dropdown-item" href="javascript:void(0)">Price: High to Low</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Product Carousel -->
+          <div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="row">
+                  <div class="col-md-3 mb-4">
+                    <div class="product-card card h-100">
+                      <img src="https://cdn.pixabay.com/photo/2016/11/19/18/06/feet-1840619_1280.jpg" class="card-img-top" alt="Product">
+                      <div class="quick-actions">
+                        <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-heart"></i></a>
+                        <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-exchange-alt"></i></a>
+                        <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-shopping-cart"></i></a>
+                      </div>
+                      <div class="card-body">
+                        <h5 class="card-title">Running Shoes</h5>
+                        <div class="d-flex align-items-center mb-2">
+                          <span class="me-2 text-primary fw-bold">$129.99</span>
+                          <span class="old-price">$159.99</span>
+                        </div>
+                        <button class="btn btn-primary w-100">Add to Cart</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3 mb-4">
+                    <div class="product-card card h-100">
+                      <img src="https://cdn.pixabay.com/photo/2014/05/02/21/50/home-office-336378_1280.jpg" class="card-img-top" alt="Product">
+                      <div class="quick-actions">
+                        <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-heart"></i></a>
+                        <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-exchange-alt"></i></a>
+                        <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-shopping-cart"></i></a>
+                      </div>
+                      <div class="card-body">
+                        <h5 class="card-title">Ergonomic Desk Chair</h5>
+                        <div class="d-flex align-items-center mb-2">
+                          <span class="me-2 text-primary fw-bold">$249.99</span>
+                          <span class="old-price">$299.99</span>
+                        </div>
+                        <button class="btn btn-primary w-100">Add to Cart</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3 mb-4">
+                    <div class="product-card card h-100">
+                      <img src="https://cdn.pixabay.com/photo/2014/08/05/10/30/iphone-410324_1280.jpg" class="card-img-top" alt="Product">
+                      <div class="quick-actions">
+                        <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-heart"></i></a>
+                        <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-exchange-alt"></i></a>
+                        <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-shopping-cart"></i></a>
+                      </div>
+                      <div class="card-body">
+                        <h5 class="card-title">Smartphone Pro Max</h5>
+                        <div class="d-flex align-items-center mb-2">
+                          <span class="me-2 text-primary fw-bold">$899.99</span>
+                          <span class="old-price">$999.99</span>
+                        </div>
+                        <button class="btn btn-primary w-100">Add to Cart</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3 mb-4">
+                    <div class="product-card card h-100">
+                      <img src="https://cdn.pixabay.com/photo/2017/08/06/12/52/headphone-2592263_1280.jpg" class="card-img-top" alt="Product">
+                      <div class="quick-actions">
+                        <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-heart"></i></a>
+                        <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-exchange-alt"></i></a>
+                        <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-shopping-cart"></i></a>
+                      </div>
+                      <div class="card-body">
+                        <h5 class="card-title">Wireless Headphones</h5>
+                        <div class="d-flex align-items-center mb-2">
+                          <span class="me-2 text-primary fw-bold">$179.99</span>
+                          <span class="old-price">$229.99</span>
+                        </div>
+                        <button class="btn btn-primary w-100">Add to Cart</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="row">
+                  <div class="col-md-3 mb-4">
+                    <div class="product-card card h-100">
+                      <img src="https://cdn.pixabay.com/photo/2018/01/22/14/13/watch-3099011_1280.jpg" class="card-img-top" alt="Product">
+                      <div class="quick-actions">
+                        <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-heart"></i></a>
+                        <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-exchange-alt"></i></a>
+                        <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-shopping-cart"></i></a>
+                      </div>
+                      <div class="card-body">
+                        <h5 class="card-title">Smart Watch</h5>
+                        <div class="d-flex align-items-center mb-2">
+                          <span class="me-2 text-primary fw-bold">$199.99</span>
+                          <span class="old-price">$249.99</span>
+                        </div>
+                        <button class="btn btn-primary w-100">Add to Cart</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3 mb-4">
+                    <div class="product-card card h-100">
+                      <img src="https://cdn.pixabay.com/photo/2016/11/22/19/33/drones-1850181_1280.jpg" class="card-img-top" alt="Product">
+                      <div class="quick-actions">
+                        <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-heart"></i></a>
+                        <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-exchange-alt"></i></a>
+                        <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-shopping-cart"></i></a>
+                      </div>
+                      <div class="card-body">
+                        <h5 class="card-title">Drone Pro</h5>
+                        <div class="d-flex align-items-center mb-2">
+                          <span class="me-2 text-primary fw-bold">$349.99</span>
+                          <span class="old-price">$399.99</span>
+                        </div>
+                        <button class="btn btn-primary w-100">Add to Cart</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3 mb-4">
+                    <div class="product-card card h-100">
+                      <img src="https://cdn.pixabay.com/photo/2019/07/13/13/42/watch-4334815_1280.jpg" class="card-img-top" alt="Product">
+                      <div class="quick-actions">
+                        <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-heart"></i></a>
+                        <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-exchange-alt"></i></a>
+                        <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-shopping-cart"></i></a>
+                      </div>
+                      <div class="card-body">
+                        <h5 class="card-title">Luxury Watch</h5>
+                        <div class="d-flex align-items-center mb-2">
+                          <span class="me-2 text-primary fw-bold">$599.99</span>
+                          <span class="old-price">$699.99</span>
+                        </div>
+                        <button class="btn btn-primary w-100">Add to Cart</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3 mb-4">
+                    <div class="product-card card h-100">
+                      <img src="https://cdn.pixabay.com/photo/2018/01/03/05/33/the-camera-3057342_1280.jpg" class="card-img-top" alt="Product">
+                      <div class="quick-actions">
+                        <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-heart"></i></a>
+                        <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-exchange-alt"></i></a>
+                        <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-shopping-cart"></i></a>
+                      </div>
+                      <div class="card-body">
+                        <h5 class="card-title">DSLR Camera</h5>
+                        <div class="d-flex align-items-center mb-2">
+                          <span class="me-2 text-primary fw-bold">$799.99</span>
+                          <span class="old-price">$899.99</span>
+                        </div>
+                        <button class="btn btn-primary w-100">Add to Cart</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon bg-dark rounded-circle" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
+              <span class="carousel-control-next-icon bg-dark rounded-circle" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+          <!-- Product Grid -->
+          <h2 class="section-title mt-5">Popular Products</h2>
+          <div class="row mt-4">
+            <div class="col-md-3 col-sm-6 mb-4">
+              <div class="product-card card h-100">
+                <img src="https://cdn.pixabay.com/photo/2016/11/19/18/06/feet-1840619_1280.jpg" class="card-img-top" alt="Product">
+                <div class="quick-actions">
+                  <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-heart"></i></a>
+                  <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-exchange-alt"></i></a>
+                  <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-shopping-cart"></i></a>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Running Shoes</h5>
+                  <div class="d-flex align-items-center mb-2">
+                    <span class="me-2 text-primary fw-bold">$129.99</span>
+                    <span class="old-price">$159.99</span>
+                  </div>
+                  <button class="btn btn-primary w-100">Add to Cart</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-4">
+              <div class="product-card card h-100">
+                <img src="https://cdn.pixabay.com/photo/2014/05/02/21/50/home-office-336378_1280.jpg" class="card-img-top" alt="Product">
+                <div class="quick-actions">
+                  <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-heart"></i></a>
+                  <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-exchange-alt"></i></a>
+                  <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-shopping-cart"></i></a>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Ergonomic Desk Chair</h5>
+                  <div class="d-flex align-items-center mb-2">
+                    <span class="me-2 text-primary fw-bold">$249.99</span>
+                    <span class="old-price">$299.99</span>
+                  </div>
+                  <button class="btn btn-primary w-100">Add to Cart</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-4">
+              <div class="product-card card h-100">
+                <img src="https://cdn.pixabay.com/photo/2014/08/05/10/30/iphone-410324_1280.jpg" class="card-img-top" alt="Product">
+                <div class="quick-actions">
+                  <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-heart"></i></a>
+                  <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-exchange-alt"></i></a>
+                  <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-shopping-cart"></i></a>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Smartphone Pro Max</h5>
+                  <div class="d-flex align-items-center mb-2">
+                    <span class="me-2 text-primary fw-bold">$899.99</span>
+                    <span class="old-price">$999.99</span>
+                  </div>
+                  <button class="btn btn-primary w-100">Add to Cart</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-4">
+              <div class="product-card card h-100">
+                <img src="https://cdn.pixabay.com/photo/2017/08/06/12/52/headphone-2592263_1280.jpg" class="card-img-top" alt="Product">
+                <div class="quick-actions">
+                  <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-heart"></i></a>
+                  <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-exchange-alt"></i></a>
+                  <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-shopping-cart"></i></a>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Wireless Headphones</h5>
+                  <div class="d-flex align-items-center mb-2">
+                    <span class="me-2 text-primary fw-bold">$179.99</span>
+                    <span class="old-price">$229.99</span>
+                  </div>
+                  <button class="btn btn-primary w-100">Add to Cart</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-4">
+              <div class="product-card card h-100">
+                <img src="https://cdn.pixabay.com/photo/2018/01/22/14/13/watch-3099011_1280.jpg" class="card-img-top" alt="Product">
+                <div class="quick-actions">
+                  <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-heart"></i></a>
+                  <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-exchange-alt"></i></a>
+                  <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-shopping-cart"></i></a>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Smart Watch</h5>
+                  <div class="d-flex align-items-center mb-2">
+                    <span class="me-2 text-primary fw-bold">$199.99</span>
+                    <span class="old-price">$249.99</span>
+                  </div>
+                  <button class="btn btn-primary w-100">Add to Cart</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-4">
+              <div class="product-card card h-100">
+                <img src="https://cdn.pixabay.com/photo/2016/11/22/19/33/drones-1850181_1280.jpg" class="card-img-top" alt="Product">
+                <div class="quick-actions">
+                  <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-heart"></i></a>
+                  <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-exchange-alt"></i></a>
+                  <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-shopping-cart"></i></a>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Drone Pro</h5>
+                  <div class="d-flex align-items-center mb-2">
+                    <span class="me-2 text-primary fw-bold">$349.99</span>
+                    <span class="old-price">$399.99</span>
+                  </div>
+                  <button class="btn btn-primary w-100">Add to Cart</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-4">
+              <div class="product-card card h-100">
+                <img src="https://cdn.pixabay.com/photo/2019/07/13/13/42/watch-4334815_1280.jpg" class="card-img-top" alt="Product">
+                <div class="quick-actions">
+                  <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-heart"></i></a>
+                  <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-exchange-alt"></i></a>
+                  <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-shopping-cart"></i></a>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Luxury Watch</h5>
+                  <div class="d-flex align-items-center mb-2">
+                    <span class="me-2 text-primary fw-bold">$599.99</span>
+                    <span class="old-price">$699.99</span>
+                  </div>
+                  <button class="btn btn-primary w-100">Add to Cart</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-4">
+              <div class="product-card card h-100">
+                <img src="https://cdn.pixabay.com/photo/2018/01/03/05/33/the-camera-3057342_1280.jpg" class="card-img-top" alt="Product">
+                <div class="quick-actions">
+                  <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-heart"></i></a>
+                  <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-exchange-alt"></i></a>
+                  <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-shopping-cart"></i></a>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">DSLR Camera</h5>
+                  <div class="d-flex align-items-center mb-2">
+                    <span class="me-2 text-primary fw-bold">$799.99</span>
+                    <span class="old-price">$899.99</span>
+                  </div>
+                  <button class="btn btn-primary w-100">Add to Cart</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Footer -->
+    <footer class="bg-dark text-white mt-5 py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+            <h5>Shop</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2"><a href="javascript:void(0)" class="text-white">New Arrivals</a></li>
+              <li class="mb-2"><a href="javascript:void(0)" class="text-white">Best Sellers</a></li>
+              <li class="mb-2"><a href="javascript:void(0)" class="text-white">Featured Products</a></li>
+              <li class="mb-2"><a href="javascript:void(0)" class="text-white">Special Offers</a></li>
+              <li class="mb-2"><a href="javascript:void(0)" class="text-white">Coming Soon</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+            <h5>Information</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2"><a href="javascript:void(0)" class="text-white">About Us</a></li>
+              <li class="mb-2"><a href="javascript:void(0)" class="text-white">Delivery Information</a></li>
+              <li class="mb-2"><a href="javascript:void(0)" class="text-white">Privacy Policy</a></li>
+              <li class="mb-2"><a href="javascript:void(0)" class="text-white">Terms & Conditions</a></li>
+              <li class="mb-2"><a href="javascript:void(0)" class="text-white">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+            <h5>Customer Service</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2"><a href="javascript:void(0)" class="text-white">My Account</a></li>
+              <li class="mb-2"><a href="javascript:void(0)" class="text-white">Order History</a></li>
+              <li class="mb-2"><a href="javascript:void(0)" class="text-white">Wishlist</a></li>
+              <li class="mb-2"><a href="javascript:void(0)" class="text-white">Returns</a></li>
+              <li class="mb-2"><a href="javascript:void(0)" class="text-white">Site Map</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <h5>Stay Connected</h5>
+            <p>Subscribe to our newsletter for updates on new products and special promotions.</p>
+            <form>
+              <div class="input-group mb-3">
+                <input type="email" class="form-control" placeholder="Your Email">
+                <button class="btn btn-primary" type="button">Subscribe</button>
+              </div>
+            </form>
+            <div class="d-flex mt-3">
+              <a href="javascript:void(0)" class="text-white me-3"><i class="fab fa-facebook-f fa-lg"></i></a>
+              <a href="javascript:void(0)" class="text-white me-3"><i class="fab fa-twitter fa-lg"></i></a>
+              <a href="javascript:void(0)" class="text-white me-3"><i class="fab fa-instagram fa-lg"></i></a>
+              <a href="javascript:void(0)" class="text-white me-3"><i class="fab fa-youtube fa-lg"></i></a>
+              <a href="javascript:void(0)" class="text-white"><i class="fab fa-pinterest fa-lg"></i></a>
+            </div>
+          </div>
+        </div>
+        <hr class="my-4">
+        <div class="row align-items-center">
+          <div class="col-md-6 text-center text-md-start">
+            <p class="mb-md-0">© 2025 ShopEase. All rights reserved.</p>
+          </div>
+          <div class="col-md-6 text-center text-md-end">
+            <img src="https://cdn.pixabay.com/photo/2019/01/21/12/47/payment-methods-3945011_1280.png" alt="Payment Methods" height="30">
+          </div>
+        </div>
+      </div>
+    </footer>
+
