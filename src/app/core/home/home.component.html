@@ -1,419 +1,454 @@
-<header>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+<body class="min-h-screen flex flex-col">
+  <!-- Main Content -->
+  <main class="flex-grow pt-[130px]">
+    <!-- Carousel -->
+    <div class="swiper mySwiper mb-8">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="https://cdn.pixabay.com/photo/2020/03/27/17/03/shopping-4974313_1280.jpg"
+               alt="Ofertas especiales" class="w-full h-[400px] object-cover">
+          <div class="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent flex items-center">
+            <div class="text-white px-10">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-</header>
-<body>
-  <div id="app">
-    <div class="tab-content" id="pagesTabContent">
-      <!-- Home Page -->
-      <div class="tab-pane fade show active" id="home" role="tabpanel">
-        <!-- Hero Banner -->
-        <div class="hero-banner" style="background-image: url('https://cdn.pixabay.com/photo/2017/12/26/09/15/woman-3040029_1280.jpg');">
-          <div class="container">
-            <div class="hero-content text-white col-md-6">
-              <h1 class="display-4 fw-bold">Summer Collection 2025</h1>
-              <p class="lead">Discover the latest trends and styles with our exclusive collection.</p>
-              <a href="javascript:void(0)" class="btn btn-primary btn-lg mt-3">Shop Now</a>
             </div>
           </div>
         </div>
-
-        <!-- Recommended Products -->
-        <div class="container mt-5">
-          <div class="d-flex justify-content-between align-items-center mb-4">
-            <h2 class="section-title">Recommended For You</h2>
-            <div class="dropdown">
-              <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="sortDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                Sort By
+        <div class="swiper-slide">
+          <img src="https://cdn.pixabay.com/photo/2017/10/10/21/47/laptop-2838921_1280.jpg"
+               alt="Nuevos modelos" class="w-full h-[400px] object-cover">
+          <div class="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent flex items-center">
+            <div class="text-white px-10">
+              <h2 class="text-4xl font-bold mb-2">Últimos Modelos</h2>
+              <p class="text-xl mb-4">La tecnología más reciente a tu alcance</p>
+              <button class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg">
+                Descubrir
               </button>
-              <ul class="dropdown-menu" aria-labelledby="sortDropdown">
-                <li><a class="dropdown-item" href="javascript:void(0)">Recommendation</a></li>
-                <li><a class="dropdown-item" href="javascript:void(0)">Price: Low to High</a></li>
-                <li><a class="dropdown-item" href="javascript:void(0)">Price: High to Low</a></li>
-              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <img src="https://cdn.pixabay.com/photo/2017/05/11/11/15/workplace-2303851_1280.jpg"
+               alt="Laptops profesionales" class="w-full h-[400px] object-cover">
+          <div class="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent flex items-center">
+            <div class="text-white px-10">
+              <h2 class="text-4xl font-bold mb-2">Para Profesionales</h2>
+              <p class="text-xl mb-4">El mejor rendimiento para tu trabajo</p>
+              <button class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg">
+                Explorar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+
+    <!-- Product Section -->
+    <div class="container mx-auto px-4 flex flex-nowrap">
+      <!-- Filters Column -->
+      <div class="w-64 pr-6 flex-shrink-0">
+        <div class="bg-white rounded-lg shadow-sm p-4 mb-4">
+          <h3 class="font-semibold text-lg mb-4 text-gray-800">Filtros</h3>
+
+          <!-- Price Range -->
+          <div class="mb-6">
+            <h4 class="font-medium text-gray-700 mb-2">Rango de Precio</h4>
+            <div id="price-slider" class="price-slider mb-2"></div>
+            <div class="flex justify-between text-sm text-gray-600">
+              <span id="price-min">$500</span>
+              <span id="price-max">$3000</span>
             </div>
           </div>
 
-          <!-- Product Carousel -->
-          <div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <div class="row">
-                  <div class="col-md-3 mb-4">
-                    <div class="product-card card h-100">
-                      <img src="https://cdn.pixabay.com/photo/2016/11/19/18/06/feet-1840619_1280.jpg" class="card-img-top" alt="Product">
-                      <div class="quick-actions">
-                        <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-heart"></i></a>
-                        <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-exchange-alt"></i></a>
-                        <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-shopping-cart"></i></a>
-                      </div>
-                      <div class="card-body">
-                        <h5 class="card-title">Running Shoes</h5>
-                        <div class="d-flex align-items-center mb-2">
-                          <span class="me-2 text-primary fw-bold">$129.99</span>
-                          <span class="old-price">$159.99</span>
-                        </div>
-                        <button class="btn btn-primary w-100">Add to Cart</button>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-3 mb-4">
-                    <div class="product-card card h-100">
-                      <img src="https://cdn.pixabay.com/photo/2014/05/02/21/50/home-office-336378_1280.jpg" class="card-img-top" alt="Product">
-                      <div class="quick-actions">
-                        <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-heart"></i></a>
-                        <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-exchange-alt"></i></a>
-                        <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-shopping-cart"></i></a>
-                      </div>
-                      <div class="card-body">
-                        <h5 class="card-title">Ergonomic Desk Chair</h5>
-                        <div class="d-flex align-items-center mb-2">
-                          <span class="me-2 text-primary fw-bold">$249.99</span>
-                          <span class="old-price">$299.99</span>
-                        </div>
-                        <button class="btn btn-primary w-100">Add to Cart</button>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-3 mb-4">
-                    <div class="product-card card h-100">
-                      <img src="https://cdn.pixabay.com/photo/2014/08/05/10/30/iphone-410324_1280.jpg" class="card-img-top" alt="Product">
-                      <div class="quick-actions">
-                        <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-heart"></i></a>
-                        <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-exchange-alt"></i></a>
-                        <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-shopping-cart"></i></a>
-                      </div>
-                      <div class="card-body">
-                        <h5 class="card-title">Smartphone Pro Max</h5>
-                        <div class="d-flex align-items-center mb-2">
-                          <span class="me-2 text-primary fw-bold">$899.99</span>
-                          <span class="old-price">$999.99</span>
-                        </div>
-                        <button class="btn btn-primary w-100">Add to Cart</button>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-3 mb-4">
-                    <div class="product-card card h-100">
-                      <img src="https://cdn.pixabay.com/photo/2017/08/06/12/52/headphone-2592263_1280.jpg" class="card-img-top" alt="Product">
-                      <div class="quick-actions">
-                        <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-heart"></i></a>
-                        <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-exchange-alt"></i></a>
-                        <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-shopping-cart"></i></a>
-                      </div>
-                      <div class="card-body">
-                        <h5 class="card-title">Wireless Headphones</h5>
-                        <div class="d-flex align-items-center mb-2">
-                          <span class="me-2 text-primary fw-bold">$179.99</span>
-                          <span class="old-price">$229.99</span>
-                        </div>
-                        <button class="btn btn-primary w-100">Add to Cart</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+          <!-- Categories -->
+          <div class="mb-6">
+            <h4 class="font-medium text-gray-700 mb-2">Categoría</h4>
+            <div class="space-y-1">
+              <div class="custom-checkbox">
+                <input type="checkbox" id="cat-gaming" class="mr-2">
+                <label for="cat-gaming" class="text-sm text-gray-600">Gaming</label>
               </div>
-              <div class="carousel-item">
-                <div class="row">
-                  <div class="col-md-3 mb-4">
-                    <div class="product-card card h-100">
-                      <img src="https://cdn.pixabay.com/photo/2018/01/22/14/13/watch-3099011_1280.jpg" class="card-img-top" alt="Product">
-                      <div class="quick-actions">
-                        <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-heart"></i></a>
-                        <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-exchange-alt"></i></a>
-                        <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-shopping-cart"></i></a>
-                      </div>
-                      <div class="card-body">
-                        <h5 class="card-title">Smart Watch</h5>
-                        <div class="d-flex align-items-center mb-2">
-                          <span class="me-2 text-primary fw-bold">$199.99</span>
-                          <span class="old-price">$249.99</span>
-                        </div>
-                        <button class="btn btn-primary w-100">Add to Cart</button>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-3 mb-4">
-                    <div class="product-card card h-100">
-                      <img src="https://cdn.pixabay.com/photo/2016/11/22/19/33/drones-1850181_1280.jpg" class="card-img-top" alt="Product">
-                      <div class="quick-actions">
-                        <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-heart"></i></a>
-                        <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-exchange-alt"></i></a>
-                        <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-shopping-cart"></i></a>
-                      </div>
-                      <div class="card-body">
-                        <h5 class="card-title">Drone Pro</h5>
-                        <div class="d-flex align-items-center mb-2">
-                          <span class="me-2 text-primary fw-bold">$349.99</span>
-                          <span class="old-price">$399.99</span>
-                        </div>
-                        <button class="btn btn-primary w-100">Add to Cart</button>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-3 mb-4">
-                    <div class="product-card card h-100">
-                      <img src="https://cdn.pixabay.com/photo/2019/07/13/13/42/watch-4334815_1280.jpg" class="card-img-top" alt="Product">
-                      <div class="quick-actions">
-                        <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-heart"></i></a>
-                        <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-exchange-alt"></i></a>
-                        <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-shopping-cart"></i></a>
-                      </div>
-                      <div class="card-body">
-                        <h5 class="card-title">Luxury Watch</h5>
-                        <div class="d-flex align-items-center mb-2">
-                          <span class="me-2 text-primary fw-bold">$599.99</span>
-                          <span class="old-price">$699.99</span>
-                        </div>
-                        <button class="btn btn-primary w-100">Add to Cart</button>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-3 mb-4">
-                    <div class="product-card card h-100">
-                      <img src="https://cdn.pixabay.com/photo/2018/01/03/05/33/the-camera-3057342_1280.jpg" class="card-img-top" alt="Product">
-                      <div class="quick-actions">
-                        <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-heart"></i></a>
-                        <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-exchange-alt"></i></a>
-                        <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-shopping-cart"></i></a>
-                      </div>
-                      <div class="card-body">
-                        <h5 class="card-title">DSLR Camera</h5>
-                        <div class="d-flex align-items-center mb-2">
-                          <span class="me-2 text-primary fw-bold">$799.99</span>
-                          <span class="old-price">$899.99</span>
-                        </div>
-                        <button class="btn btn-primary w-100">Add to Cart</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              <div class="custom-checkbox">
+                <input type="checkbox" id="cat-business" class="mr-2">
+                <label for="cat-business" class="text-sm text-gray-600">Negocios</label>
+              </div>
+              <div class="custom-checkbox">
+                <input type="checkbox" id="cat-ultrabook" class="mr-2">
+                <label for="cat-ultrabook" class="text-sm text-gray-600">Ultrabooks</label>
+              </div>
+              <div class="custom-checkbox">
+                <input type="checkbox" id="cat-2in1" class="mr-2">
+                <label for="cat-2in1" class="text-sm text-gray-600">2 en 1</label>
+              </div>
+              <div class="custom-checkbox">
+                <input type="checkbox" id="cat-budget" class="mr-2">
+                <label for="cat-budget" class="text-sm text-gray-600">Económicas</label>
               </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon bg-dark rounded-circle" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
-              <span class="carousel-control-next-icon bg-dark rounded-circle" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
           </div>
-          <!-- Product Grid -->
-          <h2 class="section-title mt-5">Popular Products</h2>
-          <div class="row mt-4">
-            <div class="col-md-3 col-sm-6 mb-4">
-              <div class="product-card card h-100">
-                <img src="https://cdn.pixabay.com/photo/2016/11/19/18/06/feet-1840619_1280.jpg" class="card-img-top" alt="Product">
-                <div class="quick-actions">
-                  <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-heart"></i></a>
-                  <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-exchange-alt"></i></a>
-                  <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-shopping-cart"></i></a>
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title">Running Shoes</h5>
-                  <div class="d-flex align-items-center mb-2">
-                    <span class="me-2 text-primary fw-bold">$129.99</span>
-                    <span class="old-price">$159.99</span>
-                  </div>
-                  <button class="btn btn-primary w-100">Add to Cart</button>
-                </div>
-              </div>
+
+          <!-- Rating -->
+          <div class="mb-6">
+            <h4 class="font-medium text-gray-700 mb-2">Valoración</h4>
+            <div class="star-rating">
+              <input type="radio" id="star5" name="rating" value="5">
+              <label for="star5"><i class="fas fa-star"></i></label>
+              <input type="radio" id="star4" name="rating" value="4">
+              <label for="star4"><i class="fas fa-star"></i></label>
+              <input type="radio" id="star3" name="rating" value="3">
+              <label for="star3"><i class="fas fa-star"></i></label>
+              <input type="radio" id="star2" name="rating" value="2">
+              <label for="star2"><i class="fas fa-star"></i></label>
+              <input type="radio" id="star1" name="rating" value="1">
+              <label for="star1"><i class="fas fa-star"></i></label>
             </div>
-            <div class="col-md-3 col-sm-6 mb-4">
-              <div class="product-card card h-100">
-                <img src="https://cdn.pixabay.com/photo/2014/05/02/21/50/home-office-336378_1280.jpg" class="card-img-top" alt="Product">
-                <div class="quick-actions">
-                  <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-heart"></i></a>
-                  <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-exchange-alt"></i></a>
-                  <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-shopping-cart"></i></a>
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title">Ergonomic Desk Chair</h5>
-                  <div class="d-flex align-items-center mb-2">
-                    <span class="me-2 text-primary fw-bold">$249.99</span>
-                    <span class="old-price">$299.99</span>
-                  </div>
-                  <button class="btn btn-primary w-100">Add to Cart</button>
-                </div>
+          </div>
+
+          <!-- Brands -->
+          <div class="Filtros-22">
+            <h4 class="font-medium text-gray-700 mb-2">Marca</h4>
+            <div class="space-y-1">
+              <div class="custom-checkbox">
+                <input type="checkbox" id="brand-asus" class="mr-2">
+                <label for="brand-asus" class="text-sm text-gray-600">Asus</label>
               </div>
-            </div>
-            <div class="col-md-3 col-sm-6 mb-4">
-              <div class="product-card card h-100">
-                <img src="https://cdn.pixabay.com/photo/2014/08/05/10/30/iphone-410324_1280.jpg" class="card-img-top" alt="Product">
-                <div class="quick-actions">
-                  <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-heart"></i></a>
-                  <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-exchange-alt"></i></a>
-                  <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-shopping-cart"></i></a>
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title">Smartphone Pro Max</h5>
-                  <div class="d-flex align-items-center mb-2">
-                    <span class="me-2 text-primary fw-bold">$899.99</span>
-                    <span class="old-price">$999.99</span>
-                  </div>
-                  <button class="btn btn-primary w-100">Add to Cart</button>
-                </div>
+              <div class="custom-checkbox">
+                <input type="checkbox" id="brand-lenovo" class="mr-2">
+                <label for="brand-lenovo" class="text-sm text-gray-600">Lenovo</label>
               </div>
-            </div>
-            <div class="col-md-3 col-sm-6 mb-4">
-              <div class="product-card card h-100">
-                <img src="https://cdn.pixabay.com/photo/2017/08/06/12/52/headphone-2592263_1280.jpg" class="card-img-top" alt="Product">
-                <div class="quick-actions">
-                  <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-heart"></i></a>
-                  <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-exchange-alt"></i></a>
-                  <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-shopping-cart"></i></a>
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title">Wireless Headphones</h5>
-                  <div class="d-flex align-items-center mb-2">
-                    <span class="me-2 text-primary fw-bold">$179.99</span>
-                    <span class="old-price">$229.99</span>
-                  </div>
-                  <button class="btn btn-primary w-100">Add to Cart</button>
-                </div>
+              <div class="custom-checkbox">
+                <input type="checkbox" id="brand-hp" class="mr-2">
+                <label for="brand-hp" class="text-sm text-gray-600">HP</label>
               </div>
-            </div>
-            <div class="col-md-3 col-sm-6 mb-4">
-              <div class="product-card card h-100">
-                <img src="https://cdn.pixabay.com/photo/2018/01/22/14/13/watch-3099011_1280.jpg" class="card-img-top" alt="Product">
-                <div class="quick-actions">
-                  <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-heart"></i></a>
-                  <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-exchange-alt"></i></a>
-                  <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-shopping-cart"></i></a>
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title">Smart Watch</h5>
-                  <div class="d-flex align-items-center mb-2">
-                    <span class="me-2 text-primary fw-bold">$199.99</span>
-                    <span class="old-price">$249.99</span>
-                  </div>
-                  <button class="btn btn-primary w-100">Add to Cart</button>
-                </div>
+              <div class="custom-checkbox">
+                <input type="checkbox" id="brand-acer" class="mr-2">
+                <label for="brand-acer" class="text-sm text-gray-600">Acer</label>
               </div>
-            </div>
-            <div class="col-md-3 col-sm-6 mb-4">
-              <div class="product-card card h-100">
-                <img src="https://cdn.pixabay.com/photo/2016/11/22/19/33/drones-1850181_1280.jpg" class="card-img-top" alt="Product">
-                <div class="quick-actions">
-                  <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-heart"></i></a>
-                  <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-exchange-alt"></i></a>
-                  <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-shopping-cart"></i></a>
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title">Drone Pro</h5>
-                  <div class="d-flex align-items-center mb-2">
-                    <span class="me-2 text-primary fw-bold">$349.99</span>
-                    <span class="old-price">$399.99</span>
-                  </div>
-                  <button class="btn btn-primary w-100">Add to Cart</button>
-                </div>
+              <div class="custom-checkbox">
+                <input type="checkbox" id="brand-msi" class="mr-2">
+                <label for="brand-msi" class="text-sm text-gray-600">MSI</label>
               </div>
-            </div>
-            <div class="col-md-3 col-sm-6 mb-4">
-              <div class="product-card card h-100">
-                <img src="https://cdn.pixabay.com/photo/2019/07/13/13/42/watch-4334815_1280.jpg" class="card-img-top" alt="Product">
-                <div class="quick-actions">
-                  <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-heart"></i></a>
-                  <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-exchange-alt"></i></a>
-                  <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-shopping-cart"></i></a>
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title">Luxury Watch</h5>
-                  <div class="d-flex align-items-center mb-2">
-                    <span class="me-2 text-primary fw-bold">$599.99</span>
-                    <span class="old-price">$699.99</span>
-                  </div>
-                  <button class="btn btn-primary w-100">Add to Cart</button>
-                </div>
+              <div class="custom-checkbox">
+                <input type="checkbox" id="brand-macbook" class="mr-2">
+                <label for="brand-macbook" class="text-sm text-gray-600">MacBook</label>
               </div>
-            </div>
-            <div class="col-md-3 col-sm-6 mb-4">
-              <div class="product-card card h-100">
-                <img src="https://cdn.pixabay.com/photo/2018/01/03/05/33/the-camera-3057342_1280.jpg" class="card-img-top" alt="Product">
-                <div class="quick-actions">
-                  <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-heart"></i></a>
-                  <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-exchange-alt"></i></a>
-                  <a href="javascript:void(0)" class="quick-action-btn"><i class="fas fa-shopping-cart"></i></a>
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title">DSLR Camera</h5>
-                  <div class="d-flex align-items-center mb-2">
-                    <span class="me-2 text-primary fw-bold">$799.99</span>
-                    <span class="old-price">$899.99</span>
-                  </div>
-                  <button class="btn btn-primary w-100">Add to Cart</button>
-                </div>
+              <div class="custom-checkbox">
+                <input type="checkbox" id="brand-dell" class="mr-2">
+                <label for="brand-dell" class="text-sm text-gray-600">Dell</label>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <!-- Footer -->
-    <footer class="bg-dark text-white mt-5 py-5">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
-            <h5>Shop</h5>
-            <ul class="list-unstyled">
-              <li class="mb-2"><a href="javascript:void(0)" class="text-white">New Arrivals</a></li>
-              <li class="mb-2"><a href="javascript:void(0)" class="text-white">Best Sellers</a></li>
-              <li class="mb-2"><a href="javascript:void(0)" class="text-white">Featured Products</a></li>
-              <li class="mb-2"><a href="javascript:void(0)" class="text-white">Special Offers</a></li>
-              <li class="mb-2"><a href="javascript:void(0)" class="text-white">Coming Soon</a></li>
-            </ul>
-          </div>
-          <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
-            <h5>Information</h5>
-            <ul class="list-unstyled">
-              <li class="mb-2"><a href="javascript:void(0)" class="text-white">About Us</a></li>
-              <li class="mb-2"><a href="javascript:void(0)" class="text-white">Delivery Information</a></li>
-              <li class="mb-2"><a href="javascript:void(0)" class="text-white">Privacy Policy</a></li>
-              <li class="mb-2"><a href="javascript:void(0)" class="text-white">Terms & Conditions</a></li>
-              <li class="mb-2"><a href="javascript:void(0)" class="text-white">Contact Us</a></li>
-            </ul>
-          </div>
-          <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
-            <h5>Customer Service</h5>
-            <ul class="list-unstyled">
-              <li class="mb-2"><a href="javascript:void(0)" class="text-white">My Account</a></li>
-              <li class="mb-2"><a href="javascript:void(0)" class="text-white">Order History</a></li>
-              <li class="mb-2"><a href="javascript:void(0)" class="text-white">Wishlist</a></li>
-              <li class="mb-2"><a href="javascript:void(0)" class="text-white">Returns</a></li>
-              <li class="mb-2"><a href="javascript:void(0)" class="text-white">Site Map</a></li>
-            </ul>
-          </div>
-          <div class="col-lg-3 col-md-6">
-            <h5>Stay Connected</h5>
-            <p>Subscribe to our newsletter for updates on new products and special promotions.</p>
-            <form>
-              <div class="input-group mb-3">
-                <input type="email" class="form-control" placeholder="Your Email">
-                <button class="btn btn-primary" type="button">Subscribe</button>
+
+      <!-- Products Grid -->
+      <div class="flex-grow">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">Laptops disponibles</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Product Card 1 -->
+          <div class="product-card bg-white rounded-lg shadow-sm overflow-hidden">
+            <div class="relative">
+              <img src="https://cdn.pixabay.com/photo/2016/03/27/07/12/apple-1282241_1280.jpg"
+                   alt="MacBook Pro" class="w-full h-48 object-cover">
+              <div class="absolute top-0  space-x-2">
+                <button class="card-icon w-8 h-8 bg-white rounded-full border-0 flex items-center justify-center  text-gray-600 hover:text-blue-600" data-product="1" data-action="view">
+                  <img src="https://cdn.discordapp.com/attachments/1378177959403454484/1378252376632463441/view.png?ex=683bed0d&is=683a9b8d&hm=c163cf3cbf5d94489304d2e3761ec75eb47a011b09ab46a2ec3042a5c8c7e559&" alt="Ver" class="w-5 h-5" />
+                </button>
+                <button class="card-icon w-8 h-8 bg-white rounded-full border-0 flex items-center justify-center  text-gray-600 hover:text-red-500" data-product="1" data-action="favorite">
+                  <img src="https://cdn.discordapp.com/attachments/1378177959403454484/1378252362816290917/favorite.png?ex=683bed09&is=683a9b89&hm=a9b9e5ef9456a56007057da0c1c3c875cbbe890d7121d83c754de161f5067b32&" alt="Favorito" class="w-5 h-5" />
+                </button>
+                <button class="card-icon w-8 h-8 bg-white rounded-full border-0 flex items-center justify-center  text-gray-600 hover:text-green-500" data-product="1" data-action="cart">
+                  <img src="https://cdn.discordapp.com/attachments/1378177959403454484/1378252390263685150/card.png?ex=683bed10&is=683a9b90&hm=5b17fc22d1face1ac4c8583e0616cd984c20c67654e7f3c5520975bd258015b3&" alt="Carrito" class="w-5 h-5" />
+                </button>
               </div>
-            </form>
-            <div class="d-flex mt-3">
-              <a href="javascript:void(0)" class="text-white me-3"><i class="fab fa-facebook-f fa-lg"></i></a>
-              <a href="javascript:void(0)" class="text-white me-3"><i class="fab fa-twitter fa-lg"></i></a>
-              <a href="javascript:void(0)" class="text-white me-3"><i class="fab fa-instagram fa-lg"></i></a>
-              <a href="javascript:void(0)" class="text-white me-3"><i class="fab fa-youtube fa-lg"></i></a>
-              <a href="javascript:void(0)" class="text-white"><i class="fab fa-pinterest fa-lg"></i></a>
+            </div>
+            <div class="p-4">
+              <h3 class="font-semibold text-gray-800 mb-1">MacBook Pro 2025</h3>
+              <p class="text-gray-600 text-sm mb-2">M3 Pro, 32GB RAM, 1TB SSD</p>
+              <div class="flex items-center justify-between">
+                <div>
+                  <span class="text-lg font-bold text-blue-600">$2,499</span>
+                  <span class="text-sm text-gray-500 line-through ml-2">$2,699</span>
+                </div>
+                <span class="bg-orange-100 text-orange-800 text-xs font-medium px-2 py-1 rounded">
+                  -7%
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product Card 2 -->
+          <div class="product-card bg-white rounded-lg shadow-sm overflow-hidden">
+            <div class="relative">
+              <img src="https://cdn.pixabay.com/photo/2015/05/31/10/55/man-791049_1280.jpg"
+                   alt="ASUS ROG" class="w-full h-48 object-cover">
+              <div class="absolute top-0  space-x-2">
+                <button class="card-icon w-8 h-8 bg-white rounded-full border-0 flex items-center justify-center  text-gray-600 hover:text-blue-600" data-product="1" data-action="view">
+                  <img src="https://cdn.discordapp.com/attachments/1378177959403454484/1378252376632463441/view.png?ex=683bed0d&is=683a9b8d&hm=c163cf3cbf5d94489304d2e3761ec75eb47a011b09ab46a2ec3042a5c8c7e559&" alt="Ver" class="w-5 h-5" />
+                </button>
+                <button class="card-icon w-8 h-8 bg-white rounded-full border-0 flex items-center justify-center  text-gray-600 hover:text-red-500" data-product="1" data-action="favorite">
+                  <img src="https://cdn.discordapp.com/attachments/1378177959403454484/1378252362816290917/favorite.png?ex=683bed09&is=683a9b89&hm=a9b9e5ef9456a56007057da0c1c3c875cbbe890d7121d83c754de161f5067b32&" alt="Favorito" class="w-5 h-5" />
+                </button>
+                <button class="card-icon w-8 h-8 bg-white rounded-full border-0 flex items-center justify-center  text-gray-600 hover:text-green-500" data-product="1" data-action="cart">
+                  <img src="https://cdn.discordapp.com/attachments/1378177959403454484/1378252390263685150/card.png?ex=683bed10&is=683a9b90&hm=5b17fc22d1face1ac4c8583e0616cd984c20c67654e7f3c5520975bd258015b3&" alt="Carrito" class="w-5 h-5" />
+                </button>
+              </div>
+            </div>
+            <div class="p-4">
+              <h3 class="font-semibold text-gray-800 mb-1">ASUS ROG Zephyrus</h3>
+              <p class="text-gray-600 text-sm mb-2">Intel i9, RTX 4080, 64GB RAM</p>
+              <div class="flex items-center justify-between">
+                <div>
+                  <span class="text-lg font-bold text-blue-600">$1,999</span>
+                  <span class="text-sm text-gray-500 line-through ml-2">$2,299</span>
+                </div>
+                <span class="bg-orange-100 text-orange-800 text-xs font-medium px-2 py-1 rounded">
+                  -13%
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product Card 3 -->
+          <div class="product-card bg-white rounded-lg shadow-sm overflow-hidden">
+            <div class="relative">
+              <img src="https://cdn.pixabay.com/photo/2020/10/21/18/07/laptop-5673901_1280.jpg"
+                   alt="Dell XPS" class="w-full h-48 object-cover">
+              <div class="absolute top-0  space-x-2">
+                <button class="card-icon w-8 h-8 bg-white rounded-full border-0 flex items-center justify-center  text-gray-600 hover:text-blue-600" data-product="1" data-action="view">
+                  <img src="https://cdn.discordapp.com/attachments/1378177959403454484/1378252376632463441/view.png?ex=683bed0d&is=683a9b8d&hm=c163cf3cbf5d94489304d2e3761ec75eb47a011b09ab46a2ec3042a5c8c7e559&" alt="Ver" class="w-5 h-5" />
+                </button>
+                <button class="card-icon w-8 h-8 bg-white rounded-full border-0 flex items-center justify-center  text-gray-600 hover:text-red-500" data-product="1" data-action="favorite">
+                  <img src="https://cdn.discordapp.com/attachments/1378177959403454484/1378252362816290917/favorite.png?ex=683bed09&is=683a9b89&hm=a9b9e5ef9456a56007057da0c1c3c875cbbe890d7121d83c754de161f5067b32&" alt="Favorito" class="w-5 h-5" />
+                </button>
+                <button class="card-icon w-8 h-8 bg-white rounded-full border-0 flex items-center justify-center  text-gray-600 hover:text-green-500" data-product="1" data-action="cart">
+                  <img src="https://cdn.discordapp.com/attachments/1378177959403454484/1378252390263685150/card.png?ex=683bed10&is=683a9b90&hm=5b17fc22d1face1ac4c8583e0616cd984c20c67654e7f3c5520975bd258015b3&" alt="Carrito" class="w-5 h-5" />
+                </button>
+              </div>
+            </div>
+            <div class="p-4">
+              <h3 class="font-semibold text-gray-800 mb-1">Dell XPS 15</h3>
+              <p class="text-gray-600 text-sm mb-2">Intel i7, 16GB RAM, 512GB SSD</p>
+              <div class="flex items-center justify-between">
+                <div>
+                  <span class="text-lg font-bold text-blue-600">$1,499</span>
+                </div>
+                <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2 py-1 rounded">
+                  Nuevo
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product Card 4 -->
+          <div class="product-card bg-white rounded-lg shadow-sm overflow-hidden">
+            <div class="relative">
+              <img src="https://cdn.pixabay.com/photo/2017/08/10/07/32/dell-2619501_1280.jpg"
+                   alt="Lenovo ThinkPad" class="w-full h-48 object-cover">
+              <div class="absolute top-0  space-x-2">
+                <button class="card-icon w-8 h-8 bg-white rounded-full border-0 flex items-center justify-center  text-gray-600 hover:text-blue-600" data-product="1" data-action="view">
+                  <img src="https://cdn.discordapp.com/attachments/1378177959403454484/1378252376632463441/view.png?ex=683bed0d&is=683a9b8d&hm=c163cf3cbf5d94489304d2e3761ec75eb47a011b09ab46a2ec3042a5c8c7e559&" alt="Ver" class="w-5 h-5" />
+                </button>
+                <button class="card-icon w-8 h-8 bg-white rounded-full border-0 flex items-center justify-center  text-gray-600 hover:text-red-500" data-product="1" data-action="favorite">
+                  <img src="https://cdn.discordapp.com/attachments/1378177959403454484/1378252362816290917/favorite.png?ex=683bed09&is=683a9b89&hm=a9b9e5ef9456a56007057da0c1c3c875cbbe890d7121d83c754de161f5067b32&" alt="Favorito" class="w-5 h-5" />
+                </button>
+                <button class="card-icon w-8 h-8 bg-white rounded-full border-0 flex items-center justify-center  text-gray-600 hover:text-green-500" data-product="1" data-action="cart">
+                  <img src="https://cdn.discordapp.com/attachments/1378177959403454484/1378252390263685150/card.png?ex=683bed10&is=683a9b90&hm=5b17fc22d1face1ac4c8583e0616cd984c20c67654e7f3c5520975bd258015b3&" alt="Carrito" class="w-5 h-5" />
+                </button>
+              </div>
+            </div>
+            <div class="p-4">
+              <h3 class="font-semibold text-gray-800 mb-1">Lenovo ThinkPad X1</h3>
+              <p class="text-gray-600 text-sm mb-2">Intel i5, 16GB RAM, 256GB SSD</p>
+              <div class="flex items-center justify-between">
+                <div>
+                  <span class="text-lg font-bold text-blue-600">$1,299</span>
+                  <span class="text-sm text-gray-500 line-through ml-2">$1,399</span>
+                </div>
+                <span class="bg-orange-100 text-orange-800 text-xs font-medium px-2 py-1 rounded">
+                  -7%
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product Card 5 -->
+          <div class="product-card bg-white rounded-lg shadow-sm overflow-hidden">
+            <div class="relative">
+              <img src="https://http2.mlstatic.com/D_NQ_NP_752221-MPE80570625184_112024-O-hp-envy-x360-14-core-5-120u-8gb-512gb-ssd-w11-lapiz.webp"
+                   alt="HP Spectre" class="w-full h-48 object-cover">
+              <div class="absolute top-0  space-x-2">
+                <button class="card-icon w-8 h-8 bg-white rounded-full border-0 flex items-center justify-center  text-gray-600 hover:text-blue-600" data-product="1" data-action="view">
+                  <img src="https://cdn.discordapp.com/attachments/1378177959403454484/1378252376632463441/view.png?ex=683bed0d&is=683a9b8d&hm=c163cf3cbf5d94489304d2e3761ec75eb47a011b09ab46a2ec3042a5c8c7e559&" alt="Ver" class="w-5 h-5" />
+                </button>
+                <button class="card-icon w-8 h-8 bg-white rounded-full border-0 flex items-center justify-center  text-gray-600 hover:text-red-500" data-product="1" data-action="favorite">
+                  <img src="https://cdn.discordapp.com/attachments/1378177959403454484/1378252362816290917/favorite.png?ex=683bed09&is=683a9b89&hm=a9b9e5ef9456a56007057da0c1c3c875cbbe890d7121d83c754de161f5067b32&" alt="Favorito" class="w-5 h-5" />
+                </button>
+                <button class="card-icon w-8 h-8 bg-white rounded-full border-0 flex items-center justify-center  text-gray-600 hover:text-green-500" data-product="1" data-action="cart">
+                  <img src="https://cdn.discordapp.com/attachments/1378177959403454484/1378252390263685150/card.png?ex=683bed10&is=683a9b90&hm=5b17fc22d1face1ac4c8583e0616cd984c20c67654e7f3c5520975bd258015b3&" alt="Carrito" class="w-5 h-5" />
+                </button>
+              </div>
+            </div>
+            <div class="p-4">
+              <h3 class="font-semibold text-gray-800 mb-1">HP Spectre x360</h3>
+              <p class="text-gray-600 text-sm mb-2">Intel i7, 16GB RAM, 1TB SSD</p>
+              <div class="flex items-center justify-between">
+                <div>
+                  <span class="text-lg font-bold text-blue-600">$1,399</span>
+                  <span class="text-sm text-gray-500 line-through ml-2">$1,599</span>
+                </div>
+                <span class="bg-orange-100 text-orange-800 text-xs font-medium px-2 py-1 rounded">
+                  -12%
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product Card 6 -->
+          <div class="product-card bg-white rounded-lg shadow-sm overflow-hidden">
+            <div class="relative">
+              <img src="https://cdn.pixabay.com/photo/2015/07/17/22/43/student-849825_1280.jpg"
+                   alt="Acer Predator" class="w-full h-48 object-cover">
+              <div class="absolute top-0  space-x-2">
+                <button class="card-icon w-8 h-8 bg-white rounded-full border-0 flex items-center justify-center  text-gray-600 hover:text-blue-600" data-product="1" data-action="view">
+                  <img src="https://cdn.discordapp.com/attachments/1378177959403454484/1378252376632463441/view.png?ex=683bed0d&is=683a9b8d&hm=c163cf3cbf5d94489304d2e3761ec75eb47a011b09ab46a2ec3042a5c8c7e559&" alt="Ver" class="w-5 h-5" />
+                </button>
+                <button class="card-icon w-8 h-8 bg-white rounded-full border-0 flex items-center justify-center  text-gray-600 hover:text-red-500" data-product="1" data-action="favorite">
+                  <img src="https://cdn.discordapp.com/attachments/1378177959403454484/1378252362816290917/favorite.png?ex=683bed09&is=683a9b89&hm=a9b9e5ef9456a56007057da0c1c3c875cbbe890d7121d83c754de161f5067b32&" alt="Favorito" class="w-5 h-5" />
+                </button>
+                <button class="card-icon w-8 h-8 bg-white rounded-full border-0 flex items-center justify-center  text-gray-600 hover:text-green-500" data-product="1" data-action="cart">
+                  <img src="https://cdn.discordapp.com/attachments/1378177959403454484/1378252390263685150/card.png?ex=683bed10&is=683a9b90&hm=5b17fc22d1face1ac4c8583e0616cd984c20c67654e7f3c5520975bd258015b3&" alt="Carrito" class="w-5 h-5" />
+                </button>
+              </div>
+            </div>
+            <div class="p-4">
+              <h3 class="font-semibold text-gray-800 mb-1">Acer Predator Helios</h3>
+              <p class="text-gray-600 text-sm mb-2">AMD Ryzen 9, RTX 4070, 32GB RAM</p>
+              <div class="flex items-center justify-between">
+                <div>
+                  <span class="text-lg font-bold text-blue-600">$1,799</span>
+                </div>
+                <span class="bg-green-100 text-green-800 text-xs font-medium px-2 py-1 rounded">
+                  En Stock
+                </span>
+              </div>
             </div>
           </div>
         </div>
-        <hr class="my-4">
-        <div class="row align-items-center">
-          <div class="col-md-6 text-center text-md-start">
-            <p class="mb-md-0">© 2025 ShopEase. All rights reserved.</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Login Modal -->
+  <div class="modal-backdrop" id="login-modal">
+    <div class="modal-content">
+      <div class="text-center mb-6">
+        <a href="javascript:void(0)" class="text-2xl font-bold text-blue-600 inline-block">
+          <span class="text-orange-500">Imporl</span>lesinc
+        </a>
+        <h2 class="text-xl font-semibold mt-4 text-gray-800">Iniciar sesión en Imporllesinc para continuar</h2>
+      </div>
+
+      <form id="login-form" class="space-y-4">
+        <div>
+          <label for="email" class="block text-gray-700 text-sm font-medium mb-1">Correo electrónico</label>
+          <input type="email" id="email" name="email" required
+                 class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+        </div>
+        <div>
+          <label for="password" class="block text-gray-700 text-sm font-medium mb-1">Contraseña</label>
+          <input type="password" id="password" name="password" required
+                 class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+        </div>
+        <div class="text-right">
+          <a href="javascript:void(0)" class="text-sm text-blue-600 hover:underline">¿Olvidó su contraseña?</a>
+        </div>
+        <button type="submit" class="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+          Iniciar sesión
+        </button>
+      </form>
+
+      <div class="my-6 relative">
+        <div class="absolute inset-0 flex items-center">
+          <div class="w-full border-t border-gray-300"></div>
+        </div>
+        <div class="relative flex justify-center">
+          <span class="bg-white px-4 text-sm text-gray-500">O continuar con</span>
+        </div>
+      </div>
+
+      <div class="space-y-2">
+        <button class="w-full social-login-btn btn-facebook">
+          <i class="fab fa-facebook-f"></i> Facebook
+        </button>
+        <button class="w-full social-login-btn btn-google">
+          <i class="fab fa-google"></i> Google
+        </button>
+        <button class="w-full social-login-btn btn-twitter">
+          <i class="fab fa-twitter"></i> Twitter
+        </button>
+        <button class="w-full social-login-btn btn-apple">
+          <i class="fab fa-apple"></i> Apple
+        </button>
+      </div>
+
+      <div class="text-center mt-6">
+        <button id="close-modal" class="text-gray-500 hover:text-gray-700">
+          <i class="fas fa-times"></i> Cerrar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Product Detail Modal -->
+  <div class="modal-backdrop" id="product-modal">
+    <div class="modal-content max-w-3xl">
+      <div class="flex justify-between items-start mb-4">
+        <h2 class="text-xl font-bold text-gray-800" id="product-modal-title">Detalles del Producto</h2>
+        <button id="close-product-modal" class="text-gray-500 hover:text-gray-700">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+
+      <div class="flex flex-col md:flex-row">
+        <div class="md:w-1/2 pr-0 md:pr-4 mb-4 md:mb-0">
+          <img id="product-modal-image" src="" alt="Product Image" class="w-full rounded-lg">
+        </div>
+        <div class="md:w-1/2">
+          <h3 id="product-modal-name" class="text-lg font-semibold mb-2"></h3>
+          <div class="flex items-center mb-2">
+            <div class="flex text-yellow-400">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+            <span class="text-gray-600 text-sm ml-2">4.5 (125 reseñas)</span>
           </div>
-          <div class="col-md-6 text-center text-md-end">
-            <img src="https://cdn.pixabay.com/photo/2019/01/21/12/47/payment-methods-3945011_1280.png" alt="Payment Methods" height="30">
+          <div class="mb-4">
+            <span id="product-modal-price" class="text-xl font-bold text-blue-600 mr-2"></span>
+            <span id="product-modal-old-price" class="text-gray-500 line-through"></span>
+          </div>
+
+          <div class="mb-4">
+            <h4 class="font-medium text-gray-700 mb-2">Especificaciones</h4>
+            <ul class="space-y-1 text-sm text-gray-600" id="product-modal-specs">
+              <!-- Specs will be inserted here -->
+            </ul>
+          </div>
+
+          <div class="flex space-x-2">
+            <button class="flex-1 bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700">
+              <i class="fas fa-cart-plus mr-2"></i> Añadir al carrito
+            </button>
+            <button class="w-12 h-10 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300 flex items-center justify-center">
+              <i class="far fa-heart"></i>
+            </button>
           </div>
         </div>
       </div>
-    </footer>
-
+    </div>
+  </div>
+</body>
