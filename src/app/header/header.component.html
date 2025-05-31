@@ -1,154 +1,37 @@
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>E-Commerce Header</title>
-  <!-- Material Icons -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-  <!-- Angular Material CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/@angular/material@15.2.9/prebuilt-themes/indigo-pink.css" rel="stylesheet">
-  <!-- Bootstrap for responsive grid -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="./header.component.css">
-</head>
-<body>
-  <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
-      <div class="container">
-        <a class="navbar-brand" href="javascript:void(0)">
-          <img src="https://cdn.pixabay.com/photo/2017/03/19/20/19/logo-2157979_1280.png" alt="ShopEase Logo">
-        </a>
-
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarContent">
-          <form class="d-flex ms-auto me-auto search-box">
-            <div class="input-group">
-              <input type="search" class="form-control" placeholder="Search products...">
-              <button class="btn btn-outline-primary" type="submit">
-                <i class="fas fa-search"></i>
-              </button>
-            </div>
-          </form>
-
-          <ul class="navbar-nav mb-2 mb-lg-0">
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="categoriesDropdown" role="button" data-bs-toggle="dropdown">
-                Categories
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="categoriesDropdown">
-                <li><a class="dropdown-item" href="javascript:void(0)">Import Products</a></li>
-                <li><a class="dropdown-item" href="javascript:void(0)">Stock</a></li>
-                <li><a class="dropdown-item" href="javascript:void(0)">Delivery</a></li>
-                <li><a class="dropdown-item" href="javascript:void(0)">Import Service</a></li>
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="javascript:void(0)">Sign In</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="javascript:void(0)">Register</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link cart-icon" href="javascript:void(0)">
-                <i class="fas fa-shopping-cart"></i>
-                <span class="cart-badge">3</span>
-              </a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="accountDropdown" role="button" data-bs-toggle="dropdown">
-                <i class="fas fa-user-circle"></i>
-              </a>
-              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="accountDropdown">
-                <li><a class="dropdown-item" href="javascript:void(0)">My Profile</a></li>
-                <li><a class="dropdown-item" href="javascript:void(0)">Orders</a></li>
-                <li><a class="dropdown-item" href="javascript:void(0)">Wishlist</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="javascript:void(0)">Logout</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  <div class="header-container">
-    <div class="main-header">
-      <!-- Mobile menu toggle -->
-      <button class="mobile-menu-toggle">
-        <span class="material-icons">menu</span>
-      </button>
-
-
-
-    <!-- Secondary navigation -->
-    <div class="secondary-nav">
-      <a href="javascript:void(0)">Productos de Importación</a>
-      <a href="javascript:void(0)">Productos de Stock</a>
-      <a href="javascript:void(0)">Delivery</a>
-      <a href="javascript:void(0)">Servicio de Importación</a>
-    </div>
-  </div>
-
-  <!-- Mobile menu -->
-  <div class="mobile-menu">
-    <div class="mobile-menu-header">
-      <h3>Menu</h3>
-      <button class="mobile-menu-close">
-        <span class="material-icons">close</span>
-      </button>
+<header class="header">
+  <div class="top-bar">
+    <!-- LINK LOGO PORTLLES IMPORT VIA DISCORD -->
+    <div class="logo">
+      <img src="https://cdn.discordapp.com/attachments/1111808588231479369/1378241557655847049/logo.png?ex=683be2f9&is=683a9179&hm=159ab81ad84552282114151f54fde14c2dcbda04cc5f4430fd891e1a1ac475a6&" alt="Logo" class="logo-img">
     </div>
 
-    <div class="mobile-menu-content">
-      <div class="mobile-menu-section">
-        <a href="javascript:void(0)" id="mobile-account-link">
-          <div id="mobile-welcome-text">Hello, Sign In</div>
-        </a>
-      </div>
-
-      <div class="mobile-menu-section">
-        <h3>Categories</h3>
-        <ul>
-          <li><a href="javascript:void(0)">Electronics</a></li>
-          <li><a href="javascript:void(0)">Home & Garden</a></li>
-          <li><a href="javascript:void(0)">Fashion</a></li>
-          <li><a href="javascript:void(0)">Sports & Outdoors</a></li>
-          <li><a href="javascript:void(0)">Beauty & Health</a></li>
-          <li><a href="javascript:void(0)">Toys & Kids</a></li>
-          <li><a href="javascript:void(0)">Automotive</a></li>
-          <li><a href="javascript:void(0)">Books & Media</a></li>
-        </ul>
-      </div>
-
-      <div class="mobile-menu-section">
-        <h3>Quick Links</h3>
-        <ul>
-          <li><a href="javascript:void(0)">Productos de Importación</a></li>
-          <li><a href="javascript:void(0)">Productos de Stock</a></li>
-          <li><a href="javascript:void(0)">Delivery</a></li>
-          <li><a href="javascript:void(0)">Servicio de Importación</a></li>
-          <li><a href="javascript:void(0)">Wishlist</a></li>
-          <li><a href="javascript:void(0)">Shopping Cart</a></li>
-        </ul>
+  <!-- BARRA DE BUSQUEDAQ -->
+    <div class="search-container">
+      <input type="text" class="search-input" placeholder="Buscar Productos">
+      <button class="search-button">
+        <i class="fas fa-search"></i>
+      </button>
+    </div>
+    
+    <!-- ACCIONES DE USUARIO, LOGIN, REGISTRO Y CARRITO -->
+    <div class="user-actions">
+      <button class="action-btn">Login</button>
+      <button class="action-btn">Registrate</button>
+      <div class="cart-icon">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-count">0</span>
       </div>
     </div>
   </div>
 
-  <!-- Mobile search panel -->
-  <div class="mobile-search">
-    <form class="mobile-search-form">
-      <input type="text" placeholder="Search products..." class="mobile-search-input">
-      <button type="submit" class="mobile-search-btn">
-        <span class="material-icons">search</span>
-      </button>
-    </form>
-    <button class="mobile-search-close">
-      <span class="material-icons" style="margin-right: 5px;">arrow_back</span>
-      Back
-    </button>
+  <!-- PESTAÑAS DE NAVEGACIÓN -->
+  <div class="nav-section">
+    <div class="nav-container">
+      <button class="nav-btn">Comprar por categoría</button>
+      <button class="nav-btn">Productos de Importación</button>
+      <button class="nav-btn">Productos de Stock</button>
+      <button class="nav-btn">Delivery</button>
+      <button class="nav-btn">Servicio de importación</button>
+    </div>
   </div>
-
-  <!-- Overlay for mobile menu -->
-  <div class="overlay"></div>
+</header>
