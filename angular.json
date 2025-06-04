@@ -21,20 +21,13 @@
             ],
             "tsConfig": "tsconfig.app.json",
             "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
+              "src/favicon.ico",
+              "src/assets"
             ],
             "styles": [
               "src/styles.css"
             ],
-            "scripts": [],
-            "server": "src/main.server.ts",
-            "outputMode": "server",
-            "ssr": {
-              "entry": "src/server.ts"
-            }
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -55,19 +48,28 @@
             "development": {
               "optimization": false,
               "extractLicenses": false,
-              "sourceMap": true
+              "sourceMap": true,
+              "verbose": false,
+              "progress": false,
+              "namedChunks": true,
+              "aot": false
             }
           },
           "defaultConfiguration": "production"
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "buildTarget": "proyectosoluciones:build:development",
+            "disableHostCheck": true,
+            "hmr": false,
+            "verbose": false,
+            "poll": 2000
+          },
           "configurations": {
-            "production": {
-              "buildTarget": "proyectosoluciones:build:production"
-            },
             "development": {
-              "buildTarget": "proyectosoluciones:build:development"
+              "buildTarget": "proyectosoluciones:build:development",
+              "verbose": false
             }
           },
           "defaultConfiguration": "development"
@@ -84,10 +86,8 @@
             ],
             "tsConfig": "tsconfig.spec.json",
             "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
+              "src/favicon.ico",
+              "src/assets/images"
             ],
             "styles": [
               "src/styles.css"

@@ -1,0 +1,62 @@
+<!-- Header -->
+<header class="header">
+  <div class="header-container">
+    <!-- Logo -->
+    <div class="logo-section">
+      <a href="javascript:void(0)">
+      <img src="../../../assets/images/logo.png" 
+            alt="Imporllesinc Logo" 
+            class="logo">
+      </a>
+    </div>
+    
+    <!-- Search Bar -->
+    <div class="search-section">
+      <div class="search-container">
+        <input type="text" 
+              placeholder="Buscar Productos" 
+              class="search-input"
+              [(ngModel)]="searchTerm">
+        <button (click)="onSearchClick()" class="search-button">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+    </div>
+    
+    <!-- User Actions -->
+    <div class="user-actions">
+      <div class="welcome-text">Bienvenido</div>
+      <button (click)="onLoginClick()" class="auth-button">
+        Identifícate
+      </button>
+      <button (click)="onRegisterClick()" class="auth-button">
+        Regístrate
+      </button>
+      <div class="cart-container" (click)="onCartClick()">
+        <i class="fas fa-shopping-cart cart-icon"></i>
+        <span class="cart-count">{{cartCount}}</span>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Secondary Navigation -->
+  <div class="secondary-nav">
+    <div class="nav-container">
+      <button (click)="onCategoryClick('categoria')" class="nav-button">
+        Comprar por categoría
+      </button>
+      <button (click)="onCategoryClick('importacion')" class="nav-button">
+        Productos de Importación
+      </button>
+      <button (click)="onCategoryClick('stock')" class="nav-button">
+        Productos de Stock
+      </button>
+      <button (click)="onCategoryClick('delivery')" class="nav-button">
+        Delivery
+      </button>
+      <button (click)="onCategoryClick('servicio')" class="nav-button">
+        Servicio de importación
+      </button>
+    </div>
+  </div>
+</header>
