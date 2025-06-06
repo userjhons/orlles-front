@@ -28,7 +28,6 @@ interface Brand {
 
 @Component({
   selector: 'app-content',
-  standalone: true,
   imports: [CommonModule, FormsModule],
   templateUrl: './content.component.html',
   styleUrls: ['./content.component.css']
@@ -178,9 +177,9 @@ export class ContentComponent implements OnInit {
     const selectedCategories = this.categories
       .filter(cat => cat.selected)
       .map(cat => cat.id);
-    
+
     if (selectedCategories.length > 0) {
-      filtered = filtered.filter(product => 
+      filtered = filtered.filter(product =>
         selectedCategories.includes(product.category)
       );
     }
@@ -189,9 +188,9 @@ export class ContentComponent implements OnInit {
     const selectedBrands = this.brands
       .filter(brand => brand.selected)
       .map(brand => brand.id);
-    
+
     if (selectedBrands.length > 0) {
-      filtered = filtered.filter(product => 
+      filtered = filtered.filter(product =>
         selectedBrands.includes(product.brand)
       );
     }
